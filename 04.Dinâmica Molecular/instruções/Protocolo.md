@@ -10,7 +10,10 @@
   `cp 5ggs_cutted.pdb 5GGS.pdb.bk`
 
   **2.2.** verificar se há resíduos cisteínas formando interações de pontes dissulfeto.      
-- Em um arquivo PDB a informação de quais átomos estão envolvidos em interações de pontes dissulfeto encontram-se no final do arquivo, nas linhas que CONECT. No AMBER as cisteínas envolvidas em nessas interações devem ser renomeadas para CYX. 
+- Em um arquivo PDB a informação de quais átomos estão envolvidos em interações de pontes dissulfeto encontram-se no final do arquivo, nas linhas que CONECT. No AMBER as cisteínas envolvidas em nessas interações devem ser renomeadas para CYX.
+- usa o comando abaixo e verifica essas informações.    
+  `tail 5ggs_cutted.pdb`    
+- output esperado:
 
 
 
