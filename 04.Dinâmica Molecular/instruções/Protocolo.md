@@ -5,9 +5,11 @@
   - Você pode vizualizar a estrutura usando o pyMOL ou Chimera. Também podes visualizar o conteúdo do arquivo, abrindo-o com um editor de texto simples, como vim/vi (Ubuntu) ou bloco de notas (Windows).      
   
 
-***1- Preparação dos arquivos de input***
+***2.1 - Preparação dos arquivos de input***
 
-***- Limpar o arquivo PDB***
+  - Faz uma cópia de prevenção do seu arquivo              
+  `cp 5ggs_cutted.pdb 5GGS.pdb.bk`
+  
 - Inicialmente é importante que o seu arquivo PDB de entrada contenha apenas as informações necessárias para rodar a simulação. É fortemente sugerido remover as informações desnecessárias mantendo apenas as linhas: ***ATOM, TER e END***
 - Se certificar que o ***id cadeias*** estão organizadas na ordem desejada. Neste protocolo, recomendasse que a cadeia do antigeno seja renomeada para ***A***, e movida para o topo (em primeiro) no arquivo PDB. A cadeia pesada do anticorpo seja renomeada para ***H***  e a cadeia leve para ***L***
 
