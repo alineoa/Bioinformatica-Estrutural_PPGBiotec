@@ -46,12 +46,14 @@ usar um editor de texto simples como o vi (Ubuntu), ou Bloco de Notas (Windows),
 - Mova esse arquivo para o seu diretorio e renomeie para ***5ggs_pos_pdb2qr.pqr***
 - Esse servidor não fornece um arquivo PDB. Use um visualizador como PyMOL ou Chimera para converter para PDB.
    - No Chimera, vai até ao menu principal, clique em ***FAVORITES** e selecione ***MODEL PANEL***,                        
-   - Na caixa de dialogo Model Panel role o menu lateral até baixo e selecione a opção WRITE PDB, dê um nome e salve o arquivo.              
-   - Para essa parte do tutorial, esse arquivo já está pronto e o [5ggs_pos_pdb2qr.pdb](https://github.com/alineoa/Bioinformatica-Estrutural_PPGBiotec/blob/main/04.Din%C3%A2mica%20Molecular/inputs/5ggs_pos_pdb2qr.pdb), baixe e mova para o seu diretório.
- 
-   - 
+   - Na caixa de diálogo Model Panel role o menu lateral até baixo e selecione a opção WRITE PDB, dê um nome e salve o arquivo.              
+   - Para essa parte do tutorial, esse arquivo já está pronto e o [5ggs_pos_pdb2qr.pdb](https://github.com/alineoa/Bioinformatica-Estrutural_PPGBiotec/blob/main/04.Din%C3%A2mica%20Molecular/inputs/5ggs_pos_pdb2qr.pdb), baixe e mova para o seu diretório.               
+- Esse arquivo terá o nome das CIS alterado para CYX, e os nomes dos resíduos HIS também serão alterados de acordo com o estado de protonação.
 
-Esse arquivo vai alterar o nome das CIS para CYX e HIS para o nome de acordo com o estado de protonação.
+***Passo 4 - remover hidrogênio***       
+- Carrega o modulo do amber e usa o comando abaixo:              
+  `reduce -Trim 5ggs_pos_pdb2qr.pdb > 5GGS_noHID.pdb`  
+
 
 
    
