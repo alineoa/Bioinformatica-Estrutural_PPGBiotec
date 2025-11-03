@@ -37,10 +37,21 @@ usar um editor de texto simples como o vi (Ubuntu), ou Bloco de Notas (Windows),
 - Antes de do cálculo , crie  uma copia de segurança do seu arquivo.      
 `cp 5ggs_cutted.pdb 5GGS_clean.pdb`
 
-- Vamos usar o [servidor](https://server.poissonboltzmann.org/pdb2pqr) do programa PDB2QR para fazer esse cálculo, usando o método PROPKA com o valor de ***pH 8***, o mesmo valor usado no experimento da obtenção dessa estrutura reportado no [artigo](https://doi.org/10.1038/ncomms13354). Carrega o arquivo ***5GGS_clean.pdb*** no servidor e selecione as opções igual a figura abaixo e clique em **start job**
+- Vamos usar o [servidor](https://server.poissonboltzmann.org/pdb2pqr) do programa PDB2QR para fazer esse cálculo, usando o método PROPKA com o valor de ***pH 8***, o mesmo valor usado no experimento da obtenção dessa estrutura reportado no [artigo](https://doi.org/10.1038/ncomms13354). Carrega o arquivo ***5GGS_clean.pdb*** no servidor e selecione as opções igual a figura abaixo e clique em **start job**.
   
 ![](https://github.com/alineoa/Bioinformatica-Estrutural_PPGBiotec/blob/main/04.Din%C3%A2mica%20Molecular/data/pdb2qr.png)
 
+- A página a seguir, é a de resultados. Baixa o arquivo no formato PQR, geralmente é o terceiro output se contares de cima para baixo.      
+![](https://github.com/alineoa/Bioinformatica-Estrutural_PPGBiotec/blob/main/04.Din%C3%A2mica%20Molecular/data/output_pdb2qr.png)
+- Mova esse arquivo para o seu diretorio e renomeie para ***5ggs_pos_pdb2qr.pqr***
+- Esse servidor não fornece um arquivo PDB. Use um visualizador como PyMOL ou Chimera para converter para PDB.
+   - No Chimera, vai até ao menu principal, clique em ***FAVORITES** e selecione ***MODEL PANEL***,                        
+   - Na caixa de dialogo Model Panel role o menu lateral até baixo e selecione a opção WRITE PDB, dê um nome e salve o arquivo.              
+   - Para essa parte do tutorial, esse arquivo já está pronto e o [5ggs_pos_pdb2qr.pdb](https://github.com/alineoa/Bioinformatica-Estrutural_PPGBiotec/blob/main/04.Din%C3%A2mica%20Molecular/inputs/5ggs_pos_pdb2qr.pdb), baixe e mova para o seu diretório.
+ 
+   - 
+
+Esse arquivo vai alterar o nome das CIS para CYX e HIS para o nome de acordo com o estado de protonação.
 
 
    
