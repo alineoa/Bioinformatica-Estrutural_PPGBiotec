@@ -1,8 +1,8 @@
 # Protocolo para uma simulação de Dinâmica Molecular Clássica de um sistema proteína-Anticorpo
 
 **Passo 1 - Obtenção do arquivo PDB**       
-  **1.1.** Baixa o arquivo [5ggs_cutted.pdb](https://github.com/alineoa/Bioinformatica-Estrutural_PPGBiotec/blob/main/04.Din%C3%A2mica%20Molecular/inputs/5ggs_cutted.pdb) e mova para o seu diretorio.
-  **1.2.** Você pode vizualizar a estrutura usando o pyMOL ou Chimera. Também podes visualizar o conteúdo do arquivo, abrindo-o com um editor de texto simples, como vim/vi (Ubuntu) ou bloco de notas (Windows).      
+  **1.1.** Baixa o arquivo [5ggs_cutted.pdb](https://github.com/alineoa/Bioinformatica-Estrutural_PPGBiotec/blob/main/04.Din%C3%A2mica%20Molecular/inputs/5ggs_cutted.pdb) e mova para o seu diretorio.       
+  **1.2.** Você pode vizualizar a estrutura com o [ChimeraX](https://www.cgl.ucsf.edu/chimerax/download.html), [PyMOL](https://www.pymol.org/), ou [3DView](https://www.rcsb.org/3d-view). Também podes visualizar o conteúdo do arquivo, abrindo-o com um editor de texto simples, como vim/vi (Ubuntu) ou bloco de notas (Windows).      
   
 
 ***Passo 2 - Preparação dos arquivos de input***        
