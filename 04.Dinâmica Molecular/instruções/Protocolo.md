@@ -16,6 +16,18 @@
 - output esperado:             
 ![](https://github.com/alineoa/Bioinformatica-Estrutural_PPGBiotec/blob/main/04.Din%C3%A2mica%20Molecular/data/tail%20arquivo.png)
 
+**2.3.** Limpar o arquivo PDB   
+- Depois de visualizar a molécula, você pode remover todos os átomos que não pertencem às proteínas do teu sistema (por exemplo, moléculas de água cristalina, ligantes, etc.). Para excluir esses átomos (rotulados como "HETATM" no arquivo PDB) e, eventualmente, suas conexões, você pode:
+usar um editor de texto simples como o vi (Ubuntu), ou Bloco de Notas (Windows), ou você também pode usar o comando ***sed*** para excluir todas as linhas com muita facilidade. 
+
+- Em um arquivo no formato PDB, as linhas que começam com a palavra ***ATOM*** correspondem aos átomos pertencentes aos resíduos de aminoácidos (ou nucleotídeos, no caso de DNA/RNA). As linhas que começam com a palavra ***TER*** indicam término de uma cadeia polipeptídica, e as linhas que começam com a palavra ***END*** indicam o fim do arquivo, geralmente a última linha.
+
+- Para o nosso caso nós temos três cadeias polipeptídica, então devemos manter a linha que especifica o termino de cada uma delas e também manter a linha que determina o final do arquivo.
+- Primeiro vamos verificar se o arquivo contém linhas diferentes de ***ATOM, TER e END***,  para isso vamos usar o comando:                         
+  `grep -vE '^(ATOM|TER|END)' 5ggs_cutted.pdb`      
+- Agora vamos remover essas linhas usando o comando abaixo:    
+  `sed -i -e '/^\(ATOM\|TER\|END\)/!d' 5ggs_cutted.pdb`
+
 
 
 - Inicialmente é importante que o seu arquivo PDB de entrada contenha apenas as informações necessárias para rodar a simulação. É fortemente sugerido remover as informações desnecessárias mantendo apenas as linhas: ***ATOM, TER e END***
