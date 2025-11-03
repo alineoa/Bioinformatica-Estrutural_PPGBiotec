@@ -30,10 +30,9 @@ usar um editor de texto simples como o vi (Ubuntu), ou Bloco de Notas (Windows),
  - Abre o arquivo com o Vi e verifica se essas linhas foram removidas
 
 ***Passo 3 - Determinar os estados de protonação a um dado pH***         
- - Nós estamos tentando simular um sistema biológico real, que nem sempre é representado por um arquivo PDB. Um exemplo disso é o estado de protonação do resíduo de aminoácido histidina, que dependendo das condições de pH do ambiente, este resíduo pode existir na forma neutra ou protonada, que diferem em carga e geometria do anel aromático. A forma neutra do anel imidazol aromático pode participar das interações cátion-π com vários cátions metálicos ou resíduos de Lys e Arg. Já na forma protonada, doa interações cátion-π com outros resíduos aromáticos [Phe, Tyr e Trp](https://doi.org/10.1038/s41598-024-51905-y). A dica é: conheça seu sistema e como ele funciona, isso vai ajudar a simular e obter resultados mais próximos da realidade.
+ - Nós estamos tentando simular um sistema biológico real, que nem sempre é representado por um arquivo PDB. Um exemplo disso é o estado de protonação do resíduo de aminoácido histidina, que dependendo das condições de pH do ambiente, este resíduo pode existir na forma neutra (pH alto, HID e HIE) ou protonada (pH baixo, HIP), que diferem em carga e geometria do anel aromático. A forma neutra do anel imidazol aromático pode participar das interações cátion-π com vários cátions metálicos ou resíduos de Lys e Arg. Já na forma protonada, doa interações cátion-π com outros resíduos aromáticos [Phe, Tyr e Trp](https://doi.org/10.1038/s41598-024-51905-y). A dica é: conheça seu sistema e como ele funciona, isso vai ajudar a simular e obter resultados mais próximos da realidade.
 
-   
-
+![](https://github.com/alineoa/Bioinformatica-Estrutural_PPGBiotec/blob/main/04.Din%C3%A2mica%20Molecular/data/histidinas.jpg)
 
 
 
