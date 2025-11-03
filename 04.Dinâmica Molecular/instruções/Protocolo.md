@@ -51,13 +51,31 @@ usar um editor de texto simples como o vi (Ubuntu), ou Bloco de Notas (Windows),
 - Esse arquivo terá o nome das CIS alterado para CYX, e os nomes dos resíduos HIS também serão alterados de acordo com o estado de protonação.
 
 ***Passo 4 - remover hidrogênio***   
-- Carrega o modulo do amber e usa o comando abaixo:
-  `module load amber`    
+- Carrega o modulo do amber e usa o comando abaixo:       
+  `module load amber/AT19A18`    
   `reduce -Trim 5ggs_pos_pdb2qr.pdb > 5GGS_noHID.pdb`
 
-***Passo 5 - verificar e deixar o arquivo pronto para o tleap***     
- - pdb4amber 5GGS_noHID.pdb -o 5GGS_noHID_pdb4amber.pdb
+***Passo 5 - verificar e deixar o arquivo pronto para o tleap***      
+ - pdb4amber 5GGS_noHID.pdb -o 5GGS_noHID_pdb4amber.pdb      
    - Esse arquivo terá a informação dos CONECTS no final do arquivos
+    
+***Passo 6 - Neutralizar os terminais***      
+ - As proteínas e os peptídeos têm duas extremidades conhecidas como N-terminal no início da cadeia (grupo amino) e C-terminal no final da cadeia (grupo carboxila). Se por algum motivo você clivar/fragmentar a proteína, não é interessante deixar os grupos desses terminais com cargas livres (NH3+ e COO−) pois essas cargas não desejadas podem gerar interações artificiais que não que existe no seu sistema. E para evitar isso, existe o que chamamos de capeamento que é adicionar resíduos especiais para neutralizar esses terminais.    
+   - O N-terminal é capeado usando o resíduo ACE, um grupo [acetil](https://doi.org/10.1038/s12276-018-0116-z) [−C(= O) − CH3]. O início do seu arquivo deve ficar igual a figura abaixo:         
+     ![](https://github.com/alineoa/Bioinformatica-Estrutural_PPGBiotec/blob/main/04.Din%C3%A2mica%20Molecular/data/grupo_acetil.png)
+     - Note que o átomo carbono alfa do resíduo é substituído por CH3, e o nome do resíduo do átomo é substituído por ACE. Os átomos de hidrogênios devem ser omitidos, eles serão automaticamente adicionados se o nome do resíduo e dos átomos pesamos estiverem corretos.
+    
+   - O C-terminal é capeando usando o resíduo NHE (extremidade amidada, NH2) ou NME (N-metilamida, NH −CH3).
+     - Para o NHE, o nome do resíduo do átomo N é substituído por NHE.
+       ![](https://github.com/alineoa/Bioinformatica-Estrutural_PPGBiotec/blob/main/04.Din%C3%A2mica%20Molecular/data/NHE.png)
+          
+     - Para o NME, o nome do resíduo dos átomo N e CA são substituídos por NME e CH3, respectivamente.   
+       ![](https://github.com/alineoa/Bioinformatica-Estrutural_PPGBiotec/blob/main/04.Din%C3%A2mica%20Molecular/data/NME.png)   
+
+      
+***Passo 7 - Montar o sistema em solvente explicito***     
+- As proteínas e ligantes não estão isolados no seu micro-ambiente biológico, as reações biológicas, como a ligação de um ligante ao seu receptor, o enovelamento de proteínas, ocorrem na interface entre uma proteína, o [solvente circundante](10.1529/biophysj.105.058917) juntamente com ions como [Na+, K+ e  Cl-](https://doi.org/10.1021/ct9006579).
+- Dessa forma, antes de executar a simulação é necessário colocar o nosso sistema em condições similares. Para isso vamos usar o a ferramenta tleap do amber e executar os seguintes comandos:    
 
 
 
