@@ -1,5 +1,5 @@
 
-# :memo: Protocolo para uma Dinâmica Molecular Clássica de um Sistema proteína-Anticorpo
+# :memo: Protocolo para uma simulação de Dinâmica Molecular Clássica de um sistema proteína-Anticorpo
 
 ***1- Preparação dos arquivos de input***
 
