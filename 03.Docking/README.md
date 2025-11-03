@@ -1,15 +1,17 @@
 # Predição de interações
 
-1. Paratope prediction with [Parasurf](https://huggingface.co/spaces/angepapa/ParaSurf).
+Este conjunto de etapas foca na predição do sítio de ligação do anticorpo (parátopo) e do seu alvo (epítopo), culminando na modelagem da estrutura do complexo (anticorpo-alvo) através de ancoragem molecular (docking).
 
-2. Filter residues with paratope score equal or superior to 0.5 using [Colab](https://colab.research.google.com/drive/1GLWdmNNblMR6jfrydyR56pu2sXYf2Mhb?usp=sharing).
+1. Utilize o [Parasurf](https://huggingface.co/spaces/angepapa/ParaSurf) para prever os resíduos do anticorpo (Pembrolizumabe) que interagem com o antígeno (PD-1). Filtrar e selecionar os resíduos com pontuação de parátopo (paratope score) igual ou superior a 0.5 usando um Notebook [Colab](https://colab.research.google.com/drive/1GLWdmNNblMR6jfrydyR56pu2sXYf2Mhb?usp=sharing).
 
-3. Epitope prediction with [ElliPro](http://tools.iedb.org/ellipro/).
+2. Utilize o [ElliPro](http://tools.iedb.org/ellipro/) para prever as regiões de superfície do antígeno (PD-1) que são prováveis de serem reconhecidas pelo anticorpo.
 
-4. Fix the PDB insertions and numbering using [PDB-Tools](https://rascar.science.uu.nl/pdbtools/submit).
+3. Ajuste e Padronização do PDB: Corrigir as inserções e a numeração do PDB utilizando as ferramentas [PDB-Tools](https://rascar.science.uu.nl/pdbtools/submit).
 
-5. Adjust proteins' protonation state to pH 7.4 using [PDB2PQR](https://server.poissonboltzmann.org/pdb2pqr).
+4. Ajuste do Estado de Protonação: Ajustar o estado de protonação das proteínas para um pH fisiológico de 7.4 (ou o pH de interesse para o estudo) usando o software [PDB2PQR](https://server.poissonboltzmann.org/pdb2pqr).
 
-6. Run molecular docking with [ClusPro](https://cluspro.org/home.php) in Antibody Mode.
+5. Executar o docking proteína-proteína com o [ClusPro](https://cluspro.org/home.php), utilizando o modo Antibody Mode (Modo Anticorpo) para aproveitar as informações específicas de anticorpos e melhorar a precisão da predição.  
 
-7. Perform structure prediction of the complex using [Protenix](https://protenix-server.com/model/prediction/add).
+6. Predição da Estrutura do Complexo: Realizar a predição estrutural do complexo (Fv-PD-1) usando o [Protenix](https://protenix-server.com/model/prediction/add).
+
+7. Realizar a predição de interações usando o servidor [RING 4.0](https://ring.biocomputingup.it/)
