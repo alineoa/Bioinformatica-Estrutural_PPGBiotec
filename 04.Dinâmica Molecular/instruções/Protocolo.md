@@ -44,7 +44,7 @@ usar um editor de texto simples como o vi (Ubuntu), ou Bloco de Notas (Windows),
 - A página a seguir, é a de resultados. Baixa o arquivo no formato PQR, geralmente é o terceiro output se contares de cima para baixo.      
 ![](https://github.com/alineoa/Bioinformatica-Estrutural_PPGBiotec/blob/main/04.Din%C3%A2mica%20Molecular/data/output_pdb2qr.png)
 - Mova esse arquivo para o seu diretorio e renomeie para ***5ggs_pos_pdb2qr.pqr***
-- Esse servidor não fornece um arquivo PDB. Use um visualizador como PyMOL ou Chimera para converter para PDB.
+- Esse servidor não fornece um arquivo PDB. Use um visualizador como [ChimeraX](https://www.cgl.ucsf.edu/chimerax/download.html) ou [PyMOL](https://www.pymol.org/) para converter para PDB.    
    - No Chimera, vai até ao menu principal, clique em ***FAVORITES** e selecione ***MODEL PANEL***,                        
    - Na caixa de diálogo Model Panel role o menu lateral até baixo e selecione a opção WRITE PDB, dê um nome e salve o arquivo.              
    - Para essa parte do tutorial, esse arquivo já está pronto e o [5ggs_pos_pdb2qr.pdb](https://github.com/alineoa/Bioinformatica-Estrutural_PPGBiotec/blob/main/04.Din%C3%A2mica%20Molecular/inputs/5ggs_pos_pdb2qr.pdb), baixe e mova para o seu diretório.               
