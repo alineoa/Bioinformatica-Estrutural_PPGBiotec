@@ -50,9 +50,16 @@ usar um editor de texto simples como o vi (Ubuntu), ou Bloco de Notas (Windows),
    - Para essa parte do tutorial, esse arquivo já está pronto e o [5ggs_pos_pdb2qr.pdb](https://github.com/alineoa/Bioinformatica-Estrutural_PPGBiotec/blob/main/04.Din%C3%A2mica%20Molecular/inputs/5ggs_pos_pdb2qr.pdb), baixe e mova para o seu diretório.               
 - Esse arquivo terá o nome das CIS alterado para CYX, e os nomes dos resíduos HIS também serão alterados de acordo com o estado de protonação.
 
-***Passo 4 - remover hidrogênio***       
-- Carrega o modulo do amber e usa o comando abaixo:              
-  `reduce -Trim 5ggs_pos_pdb2qr.pdb > 5GGS_noHID.pdb`  
+***Passo 4 - remover hidrogênio***   
+- Carrega o modulo do amber e usa o comando abaixo:
+  `module load amber`    
+  `reduce -Trim 5ggs_pos_pdb2qr.pdb > 5GGS_noHID.pdb`
+
+***Passo 5 - verificar e deixar o arquivo pronto para o tleap***     
+ - pdb4amber 5GGS_noHID.pdb -o 5GGS_noHID_pdb4amber.pdb
+   - Esse arquivo terá a informação dos CONECTS no final do arquivos
+
+
 
 
 
