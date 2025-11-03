@@ -1,3 +1,6 @@
+<img width="1500" height="844" alt="image" src="https://github.com/user-attachments/assets/386faa22-12e5-4993-ad57-332c70293443" />
+
+
 # Predição de interações
 
 Este conjunto de etapas foca na predição do sítio de ligação do anticorpo (parátopo) e do seu alvo (epítopo), culminando na modelagem da estrutura do complexo (anticorpo-alvo) através de ancoragem molecular (docking).
