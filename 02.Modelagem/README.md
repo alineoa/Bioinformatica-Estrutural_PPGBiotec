@@ -31,7 +31,6 @@ A estrutura da PD-1 é crucial para estudos da interação alvo-ligante. Pode-se
 
 - [Aggrescan4D](https://biocomp.chem.uw.edu.pl/a4d/)
 - [PPStab](https://webs.iiitd.edu.in/raghava/pptstab/index.html)
-- [AIgPred](https://webs.iiitd.edu.in/raghava/algpred2/batch.html)
 - [Therapeutic antibody profiler](https://opig.stats.ox.ac.uk/webapps/sabdab-sabpred/sabpred/tap)
 - [BioPhi](https://biophi.dichlab.org/)
 
