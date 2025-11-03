@@ -13,9 +13,11 @@
   - [ABodyBuilder2](https://opig.stats.ox.ac.uk/webapps/sabdab-sabpred/sabpred/abodybuilder2/) 
   - [AlphaFold3](https://alphafoldserver.com/)
 
-A modelagem da PD-1 é crucial para estudos da interação alvo-ligante. Pode-se utilizar:
+A estrutura da PD-1 é crucial para estudos da interação alvo-ligante. Pode-se utilizar:
 
+  - [Protein Data Bank](https://www.rcsb.org/)
   - [AlphaFold3](https://alphafoldserver.com/)
+  - [AlphaFold Database](https://alphafold.ebi.ac.uk/)
   - [Protenix](https://protenix-server.com/)
 
 5. Validação Estrutural:
