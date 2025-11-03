@@ -1,3 +1,4 @@
+<img width="1500" height="844" alt="image" src="https://github.com/user-attachments/assets/5d65f230-e4f9-4d64-8e2e-f1d1e6bca8c3" />
 
 # Modelagem molecular 
 
