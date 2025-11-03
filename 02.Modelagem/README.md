@@ -1,26 +1,30 @@
 
 # Modelagem molecular 
 
-traduzir tudo abaixo, incluir algo sobre sobre modelagem de proteínas, não só anticorpos, parte de buscar as sequencias vai pra parte de banco de dados
+1. Pembrolizumabe (Anticorpo): Buscar pelo termo "pembrolizumab" no [Drugbank](https://go.drugbank.com/) e salvar a sequência em formato FASTA.
 
-1. Search for "pembrolizumab" in the [Drugbank](https://go.drugbank.com/) and save the sequence in the FASTA format.
+2. PD-1 (Antígeno): Sugere-se buscar a sequência da proteína Programmed Death-1 em bancos de dados como [UniProt](https://www.uniprot.org/) para obter a sequência para modelagem.
 
-2. Run ANARCI with the "Martin" numbering scheme to determine the residues corresponding to the Fv [here](https://opig.stats.ox.ac.uk/webapps/sabdab-sabpred/sabpred/anarci/).
+3. Identificação de CDRs: Executar o [ANARCI]((https://opig.stats.ox.ac.uk/webapps/sabdab-sabpred/sabpred/anarci/)) com o esquema de numeração "Martin" para determinar os resíduos correspondentes à região Fv do Pembrolizumabe. Para a identificação correta dos CDRs (Regiões Determinantes de Complementaridade) de acordo com o esquema Martin, consulte a [documentação](http://www.bioinf.org.uk/abs/info.html).
 
-3. To correctly identify the CDRs according to Martin, access [here](http://www.bioinf.org.uk/abs/info.html).
+4. Modelagem da Região Fv do Pembrolizumabe pode ser realizada com múltiplas ferramentas, como:
 
-4. 3D modeling of Pembrolizumab's Fv can be achievied with multiple tools:
   - [ABodyBuilder2](https://opig.stats.ox.ac.uk/webapps/sabdab-sabpred/sabpred/abodybuilder2/) 
   - [AlphaFold3](https://alphafoldserver.com/)
 
-5. Structure validation with:
-   - [MolProbity](https://molprobity.biochem.duke.edu/): check for the clashscore, Ramachandran outliers and MolProbity score.
-   - [QMEAN](https://swissmodel.expasy.org/qmean/): check for the QMEANDisCo Global and local quality estimates.
+A modelagem da PD-1 é crucial para estudos da interação alvo-ligante. Pode-se utilizar:
 
-Structure visualization can be achievied with [ChimeraX](https://www.cgl.ucsf.edu/chimerax/download.html) or [3DView](https://www.rcsb.org/3d-view)
+  - [AlphaFold3](https://alphafoldserver.com/)
+  - [Protenix](https://protenix-server.com/)
+
+5. Validação Estrutural:
+   - [MolProbity](https://molprobity.biochem.duke.edu/): clashscore (pontuação de choques estéricos); Ramachandran outliers (resíduos com ângulos de torção incomuns); MolProbity score (pontuação geral de qualidade).
+   - [QMEAN](https://swissmodel.expasy.org/qmean/): estimativas de qualidade Global e Local QMEANDisCo.
+
+6. A visualização das estruturas pode ser alcançada com [ChimeraX](https://www.cgl.ucsf.edu/chimerax/download.html), [PyMOL](https://www.pymol.org/), ou [3DView](https://www.rcsb.org/3d-view)
 
 
-# Properties Analysis
+# Análise de propriedades
 
 - [Aggrescan4D](https://biocomp.chem.uw.edu.pl/a4d/)
 - [Therapeutic antibody profiler](https://opig.stats.ox.ac.uk/webapps/sabdab-sabpred/sabpred/tap)
