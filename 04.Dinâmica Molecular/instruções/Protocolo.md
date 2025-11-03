@@ -1,15 +1,20 @@
 # :memo: Protocolo para uma simulação de Dinâmica Molecular Clássica de um sistema proteína-Anticorpo
 
-**1 - Obtenção do arquivo PDB**       
-  - Baixa o arquivo [5ggs_cutted.pdb](https://github.com/alineoa/Bioinformatica-Estrutural_PPGBiotec/blob/main/04.Din%C3%A2mica%20Molecular/inputs/5ggs_cutted.pdb) e mova para o seu diretorio.
-  - Você pode vizualizar a estrutura usando o pyMOL ou Chimera. Também podes visualizar o conteúdo do arquivo, abrindo-o com um editor de texto simples, como vim/vi (Ubuntu) ou bloco de notas (Windows).      
+**Passo 1 - Obtenção do arquivo PDB**       
+  **1.1.** Baixa o arquivo [5ggs_cutted.pdb](https://github.com/alineoa/Bioinformatica-Estrutural_PPGBiotec/blob/main/04.Din%C3%A2mica%20Molecular/inputs/5ggs_cutted.pdb) e mova para o seu diretorio.
+  **1.2.** Você pode vizualizar a estrutura usando o pyMOL ou Chimera. Também podes visualizar o conteúdo do arquivo, abrindo-o com um editor de texto simples, como vim/vi (Ubuntu) ou bloco de notas (Windows).      
   
 
-***2.1 - Preparação dos arquivos de input***
-
-  - Faz uma cópia de prevenção do seu arquivo              
+***Passo 2 - Preparação dos arquivos de input***        
+  **2.1.** Faz uma cópia de prevenção do seu arquivo              
   `cp 5ggs_cutted.pdb 5GGS.pdb.bk`
-  
+
+  **2.2.** verificar se há resíduos cisteínas formando interações de pontes dissulfeto.      
+- Em um arquivo PDB a informação de quais átomos estão envolvidos em interações de pontes dissulfeto encontram-se no final do arquivo, nas linhas que CONECT. No AMBER as cisteínas envolvidas em nessas interações devem ser renomeadas para CYX. 
+
+
+
+
 - Inicialmente é importante que o seu arquivo PDB de entrada contenha apenas as informações necessárias para rodar a simulação. É fortemente sugerido remover as informações desnecessárias mantendo apenas as linhas: ***ATOM, TER e END***
 - Se certificar que o ***id cadeias*** estão organizadas na ordem desejada. Neste protocolo, recomendasse que a cadeia do antigeno seja renomeada para ***A***, e movida para o topo (em primeiro) no arquivo PDB. A cadeia pesada do anticorpo seja renomeada para ***H***  e a cadeia leve para ***L***
 
