@@ -37,10 +37,13 @@ usar um editor de texto simples como o vi (Ubuntu), ou Bloco de Notas (Windows),
 - Antes de do cálculo , crie  uma copia de segurança do seu arquivo.      
 `cp 5ggs_cutted.pdb 5GGS_clean.pdb`
 
-- Vamos usar o programa PDB2QR para fazer esse cálculo, usando o método PROPKA com o valor de ***pH 8***, o mesmo valor usado no experimento da obtenção dessa estrutura reportado no [artigo](https://doi.org/10.1038/ncomms13354).
+- Vamos usar o [servidor](https://server.poissonboltzmann.org/pdb2pqr) do programa PDB2QR para fazer esse cálculo, usando o método PROPKA com o valor de ***pH 8***, o mesmo valor usado no experimento da obtenção dessa estrutura reportado no [artigo](https://doi.org/10.1038/ncomms13354). Carrega o arquivo ***5GGS_clean.pdb*** no servidor e selecione as opções igual a figura abaixo e clique em **start job**
+  
+![](https://github.com/alineoa/Bioinformatica-Estrutural_PPGBiotec/blob/main/04.Din%C3%A2mica%20Molecular/data/pdb2qr.png)
 
 
 
+   
 - Inicialmente é importante que o seu arquivo PDB de entrada contenha apenas as informações necessárias para rodar a simulação. É fortemente sugerido remover as informações desnecessárias mantendo apenas as linhas: ***ATOM, TER e END***
 - Se certificar que o ***id cadeias*** estão organizadas na ordem desejada. Neste protocolo, recomendasse que a cadeia do antigeno seja renomeada para ***A***, e movida para o topo (em primeiro) no arquivo PDB. A cadeia pesada do anticorpo seja renomeada para ***H***  e a cadeia leve para ***L***
 
