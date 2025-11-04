@@ -138,8 +138,29 @@ usar um editor de texto simples como o vi (Ubuntu), ou Bloco de Notas (Windows),
     
     **(v)** - E por fim, a [equilibração](https://github.com/alineoa/Bioinformatica-Estrutural_PPGBiotec/blob/main/04.Din%C3%A2mica%20Molecular/inputs/run_MD/equ.in) final é feita sem qualquer restrição de movimentação de átomos por 5 ns. São mantidos os parâmetros da etapa de equilibração de densidade, exceto pela restrição dos átomos.
 
+
+    - Para este tutorial será apenas necessário fazer algumas alterações para adequar os script da simulação ao seu sistema:  
+        - Nos arquivos [min1.in](https://github.com/alineoa/Bioinformatica-Estrutural_PPGBiotec/blob/main/04.Din%C3%A2mica%20Molecular/inputs/run_MD/min1.in), [min2.in](https://github.com/alineoa/Bioinformatica-Estrutural_PPGBiotec/blob/main/04.Din%C3%A2mica%20Molecular/inputs/run_MD/min2.in), [heat.in](https://github.com/alineoa/Bioinformatica-Estrutural_PPGBiotec/blob/main/04.Din%C3%A2mica%20Molecular/inputs/run_MD/heat.in), [dens.in](https://github.com/alineoa/Bioinformatica-Estrutural_PPGBiotec/blob/main/04.Din%C3%A2mica%20Molecular/inputs/run_MD/dens.in) e [equ,in](https://github.com/alineoa/Bioinformatica-Estrutural_PPGBiotec/blob/main/04.Din%C3%A2mica%20Molecular/inputs/run_MD/equ.in) altere o parametro/flag ``restraintmask=':'`` insere o número total de resíduos qdo seu sistema. Por exemplo, se no total (proteína + anticorpo), o teu sistema tem 352 reśiduos, você deve preencher da seguinte maneira: ``restraintmask=':1-352'``. Esse valor corresponde exatamente ao número de resíduos de sistema usado nesta prática.     
+  
+    - Para executar o relaxamento; execute os seguintes comandos na ordem abaixo!
+    
+        pmemd.cuda -O -i min1.in  -p 5GGS_capeado_solvated.prmtop -o min1.out -c 5GGS_capeado_solvated.rst7 -x min1.nc -r min1.rst  -ref 5GGS_capeado_solvated.rst7
+        pmemd.cuda -O -i min2.in  -p 5GGS_capeado_solvated.prmtop -o min2.out -c min1.rst -r min2.rst -ref min1.rst
+        pmemd.cuda -O -i heat.in  -p 5GGS_capeado_solvated.prmtop -o heat.out -c min2.rst -r heat.rst -x heat.nc -ref min2.rst
+        pmemd.cuda -O -i dens.in  -p 5GGS_capeado_solvated.prmtop -o dens.out -c heat.rst -r dens.rst -x dens.nc -ref heat.rst
+        pmemd.cuda -O -i equ.in   -p 5GGS_capeado_solvated.prmtop -o equ.out  -c dens.rst -r equ.rst  -x equ.nc  -ref dens.rst
+
+  # TERCEIRO PASSO - PRODUÇÃO DA DINÂMICA
+  - Os arquivos de input com todos parametros/flags necessárias para simular da dinâmica  molecular aquecida relaxação do sistema já se encontram prontos em **[input_files](https://github.com/SFBBGroup/BioFun/tree/main/protocols/Heated_MD_Amber/input_files)**.   
+    
 ***Passo 8 - Produção da dinâmica molecular***    
-  - A etapa de produção da dinâmica ocorre em uma produção de 30 ns a 310 K, seguido de uma de 12,5 ns a 330K, uma de 12,5 ns a 360 K e finalmente uma de 390 K durante 15 ns.
+  - A etapa de produção da dinâmica ocorre em uma produção de 30 ns a 310 K, com todo sistema solto, sem restrições.
+  - Para executar a relaxação execute os seguintes comandos na ordem abaixo!
+
+       pmemd.cuda -O -i heatMD310.in -p 5GGS_capeado_solvated.prmtop -o mdProd1.out -c equ.rst -r mdProd1.rst -x mdProd1.nc
+
+
+***Passo 9 - Análise dos resultados***      
 
 ***4 - Calcular o RMSD da interface de ligação usando o cpptraj***   
   - Neste turorial, nós definimos como resíduos da interface de ligação todos aqueles resíduos da proteína cujo seu atómo carbono alfa está a 8Å de distância do atómo carbono alfa de qualquer resíduos do anticorpo.
