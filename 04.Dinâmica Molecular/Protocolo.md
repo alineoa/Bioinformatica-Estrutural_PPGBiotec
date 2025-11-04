@@ -113,7 +113,7 @@ usar um editor de texto simples como o vi (Ubuntu), ou Bloco de Notas (Windows),
        `charge sis`                                   
        `addions sis Cl- 6`                                 
        - verifica novamente se a carga foi zerada                             
-       `check sis`                       
+       `charge sis`                          
                                 
          ***É esperado o resultado zero (0)***
   
