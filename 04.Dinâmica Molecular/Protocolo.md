@@ -62,6 +62,7 @@ usar um editor de texto simples como o vi (Ubuntu), ou Bloco de Notas (Windows),
 
 ***Passo 5 - Verificar e deixar o arquivo pronto para o tleap***      
    `pdb4amber 5GGS_noHID.pdb -o 5GGS_noHID_pdb4amber.pdb`         
+   - Caso tenhas problemas em rodar o pdb4amber, arqui tem o [arquivo](https://github.com/alineoa/Bioinformatica-Estrutural_PPGBiotec/blob/main/04.Din%C3%A2mica%20Molecular/inputs/5GGS_noHID_pdb4amber.pdb) pronto.    
    - Esse arquivo terá a informação dos CONECTS no final do arquivos
     
 ***Passo 6 - Neutralizar os terminais***      
