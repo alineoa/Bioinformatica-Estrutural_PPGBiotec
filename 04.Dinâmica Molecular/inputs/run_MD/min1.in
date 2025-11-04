@@ -1,12 +1,12 @@
 &cntrl
- imin = 1
- maxcyc = 7000
- ntx = 1 
- ntpr = 1000 
- ntwx = 1000
- ntr = 1
- ncyc = 3500 
- ntr=1, restraintmask=':1-352', 
- restraint_wt=500.0
+ imin = 1         !Ativa o modo minimização
+ maxcyc = 7000    !Define o número total de ciclos de minimização.
+ ntx = 1          !O programa vai ler apenas as coordenadas iniciais do sistema (sem velocidades).
+ ntpr = 1000      !A cada 1000 ciclos, o AMBER imprime informações (energia total, gradiente, etc.) no arquivo de saída (.out).
+ ntwx = 1000      !A cada 1000 ciclos, o AMBER salva coordenadas no arquivo de trajetória (.mdcrd ou .nc).
+ ntr = 1          !Usa restrições harmônicas
+ ncyc = 3500      !Nos primeiro 3500 ciclos, usa o método Steepest Descent (SD) — Nos restantes 3500 (até 7000), usa o Conjugate Gradient (CG).
+ restraintmask=':1-352', !Restringir todos os resíduos de 1 até 352
+ restraint_wt=500.0 !Define a força da restrição harmônica aplicada aos resíduos definidos no restraintmask em kcal/mol*Ang^-2.
 &end
 /
