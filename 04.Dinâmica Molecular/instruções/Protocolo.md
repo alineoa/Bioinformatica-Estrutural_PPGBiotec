@@ -77,6 +77,13 @@ usar um editor de texto simples como o vi (Ubuntu), ou Bloco de Notas (Windows),
 - As proteínas e ligantes não estão isolados no seu micro-ambiente biológico, as reações biológicas, como a ligação de um ligante ao seu receptor, o enovelamento de proteínas, ocorrem na interface entre uma proteína, o [solvente circundante](10.1529/biophysj.105.058917) juntamente com ions como [Na+, K+ e  Cl-](https://doi.org/10.1021/ct9006579).
 - Dessa forma, antes de executar a simulação é necessário colocar o nosso sistema em condições similares. Para isso vamos usar o a ferramenta tleap do amber e executar os seguintes comandos:    
 
+  **7.1.** Campo de força
+   - A dinâmica molecular resolve a segunda lei de Newton para todos os átomos de um sistema, usando as forças derivadas do campo de força para prever como eles se movem ao longo do tempo. Conhecer o seu sistema é importante pois determina escolha do campo de força. Para a nossa aula, o nosso tipo de molécula é uma proteína, e é sugerido pelos desenvolvedores do AMBER usar o campo de força ff14SB , em conjunto com o modelo de água tip3p para esse sistema.  
+
+
+
+
+
 
 
 
