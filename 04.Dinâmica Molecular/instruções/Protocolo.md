@@ -175,7 +175,11 @@ usar um editor de texto simples como o vi (Ubuntu), ou Bloco de Notas (Windows),
   - A etapa de produção da dinâmica ocorre em uma produção de 30 ns a 310 K, com todo sistema solto, sem restrições.       
   - Para executar a relaxação execute os seguintes comandos na ordem abaixo, usando o arquivo [mdPROD.in](https://github.com/alineoa/Bioinformatica-Estrutural_PPGBiotec/blob/main/04.Din%C3%A2mica%20Molecular/inputs/run_MD/mdPROD.in)!      
        ``pmemd.cuda -O -i mdPROD.in -p 5GGS_capeado_solvated.prmtop -o mdProd1.out -c equ.rst -r mdProd1.rst -x mdProd1.nc``
- 
+
+- Você pode colocar tudo em um [script único](https://github.com/alineoa/Bioinformatica-Estrutural_PPGBiotec/blob/main/04.Din%C3%A2mica%20Molecular/inputs/run_MD/script_unico.sh) e rodar o comando:     
+``bash script_unico.sh &``      
+
+
 ***Passo 9 - Análise dos resultados***         
   **9.1. Calcular o RMSD da interface de ligação usando o cpptraj**        
   - Neste turorial, nós definimos como resíduos da interface de ligação todos aqueles resíduos da proteína cujo seu atómo carbono alfa está a 8Å de distância do atómo carbono alfa de qualquer resíduos do anticorpo.
