@@ -134,11 +134,12 @@ usar um editor de texto simples como o vi (Ubuntu), ou Bloco de Notas (Windows),
               
     **(iii)** - Na [terceira etapa](https://github.com/alineoa/Bioinformatica-Estrutural_PPGBiotec/blob/main/04.Din%C3%A2mica%20Molecular/inputs/run_MD/heat.in), o sistema é submetido a um aquecimento linear (para evitar que átomos sofram acelerações súbitas e colidam) da temperatura, de 0 a 310K durante 100 ps, com uma restrição harmônica de 10 kcal.mol-1 sobre os átomos de soluto, utilizando ensemble NVT. O sistema ganha movimento aos poucos, pois é atribuido aos átomos velocidades aleatórias.
 
-    **(iv)** - Uma etapa de equilibração da densidade das águas é feita, utilizando um ensemble NPT, utilizando termostato de Langevin com frequência de choque igual a 2 e barostato Monte Carlo para manterem temperatura e pressão respectivamente a 310 K e 1 atm, durante 500 ps, com a mesma restrição sobre os átomos do soluto. E por fim, a equilibração final é feita sem qualquer restrição de movimentação de átomos por 5 ns. São mantidos os parâmetros da etapa de equilibração de densidade, exceto pela restrição dos átomos.
+    **(iv)** - Na [quarta etapa](https://github.com/alineoa/Bioinformatica-Estrutural_PPGBiotec/blob/main/04.Din%C3%A2mica%20Molecular/inputs/run_MD/dens.in), vamos subtemer o sistema a uma equilibração da densidade, utilizando um ensemble NPT, utilizando termostato de Langevin com frequência de choque igual a 2 e barostato Monte Carlo para manterem temperatura e pressão respectivamente a 310 K e 1 atm, durante 500 ps, com a mesma restrição sobre os átomos do soluto. Estamos permitindo que a caixa varie seu volume naturalmente até atingir a densidade correta (por exemplo: remover o excesso de espaços vazios na caixa de água).
+    
+    **(v)** - E por fim, a [equilibração](https://github.com/alineoa/Bioinformatica-Estrutural_PPGBiotec/blob/main/04.Din%C3%A2mica%20Molecular/inputs/run_MD/equ.in) final é feita sem qualquer restrição de movimentação de átomos por 5 ns. São mantidos os parâmetros da etapa de equilibração de densidade, exceto pela restrição dos átomos.
 
-
-***3 - Produção da dinâmica aquecida***   
-  - A etapa de produção da dinâmica aquecida ocorre em uma produção de 30 ns a 310 K, seguido de uma de 12,5 ns a 330K, uma de 12,5 ns a 360 K e finalmente uma de 390 K durante 15 ns.
+***Passo 8 - Produção da dinâmica molecular***    
+  - A etapa de produção da dinâmica ocorre em uma produção de 30 ns a 310 K, seguido de uma de 12,5 ns a 330K, uma de 12,5 ns a 360 K e finalmente uma de 390 K durante 15 ns.
 
 ***4 - Calcular o RMSD da interface de ligação usando o cpptraj***   
   - Neste turorial, nós definimos como resíduos da interface de ligação todos aqueles resíduos da proteína cujo seu atómo carbono alfa está a 8Å de distância do atómo carbono alfa de qualquer resíduos do anticorpo.
