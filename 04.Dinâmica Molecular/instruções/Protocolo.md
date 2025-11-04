@@ -50,12 +50,12 @@ usar um editor de texto simples como o vi (Ubuntu), ou Bloco de Notas (Windows),
    - Para essa parte do tutorial, esse arquivo já está pronto e o [5ggs_pos_pdb2qr.pdb](https://github.com/alineoa/Bioinformatica-Estrutural_PPGBiotec/blob/main/04.Din%C3%A2mica%20Molecular/inputs/5ggs_pos_pdb2qr.pdb), baixe e mova para o seu diretório.               
 - Esse arquivo terá o nome das CIS alterado para CYX, e os nomes dos resíduos HIS também serão alterados de acordo com o estado de protonação.
 
-***Passo 4 - remover hidrogênio***   
+***Passo 4 - Remover hidrogênio***   
 - Carrega o modulo do amber e usa o comando abaixo:       
   `module load amber/AT19A18`    
   `reduce -Trim 5ggs_pos_pdb2qr.pdb > 5GGS_noHID.pdb`
 
-***Passo 5 - verificar e deixar o arquivo pronto para o tleap***      
+***Passo 5 - Verificar e deixar o arquivo pronto para o tleap***      
  - pdb4amber 5GGS_noHID.pdb -o 5GGS_noHID_pdb4amber.pdb      
    - Esse arquivo terá a informação dos CONECTS no final do arquivos
     
@@ -125,11 +125,15 @@ usar um editor de texto simples como o vi (Ubuntu), ou Bloco de Notas (Windows),
            - O Arquivo de topologia contem tipos de átomos e suas cargas parciais, listas de ligações, ângulos e torções, parâmetros do campo de força aplicados.
            - O arquivo de coordenadas (arquivo restart) contém as coordenadas tridimensionais (x, y, z) de todos os átomos, e opcionalmente, velocidades atômicas (caso seja um restart de simulação).    
 
+***Passo 8 - Relaxação do sistema***    
+  - A relaxação será dividida em quatro etapas.            
+        **(i)** - Nessa [primeira etapa](https://github.com/alineoa/Bioinformatica-Estrutural_PPGBiotec/blob/main/04.Din%C3%A2mica%20Molecular/inputs/run_MD/min1.in) vamos relaxar o solvente e os íons e todo o soluto vai ser fixo por uma força de restrição harmônica de 500 kcal.mol-1.     
+        - Quando adicionamos as águas não levamos em consideração que elas podem fazer sobreposição com as proteína do sistema. Da mesma forma os íons, nós somente adicionamos ao sistema de forma aleatória, sem considerar a posição de outras moléculas presentes. Algumas moléculas de água podem estar muito próximas dos átomos do soluto, gerando repulsões e/ou colisões.  Essa primeira minimização remove más interações iniciais (como sobreposições e repulsões) no solvente, relaxando o ambiente ao redor do soluto. Assim, só as moléculas de água e íons podem se mover livremente e ajustar suas posições.
+    
+    **(ii)** - Nessa 
+    
 
-
-
-***2 - Relaxação do sistema***   
-  - A relaxação será dividida em quatro etapas. Inicialmente considerando somente as águas e íons livres e todo o soluto fixo por uma força de 500 kcal.mol-1. Após isso, uma segunda minimização é feita considerando todo o sistema livre.  Uma vez feita a minimização, o sistema é submetido a um aquecimento linear da temperatura, de 0 a 310K durante 200 ps, com uma restrição harmônica de 10 kcal.mol-1 sobre os átomos de soluto, utilizando ensemble NVT. Uma etapa de equilibração da densidade das águas é feita, utilizando um ensemble NPT, utilizando termostato de Langevin com frequência de choque igual a 2 e barostato Monte Carlo para manterem temperatura e pressão respectivamente a 310 K e 1 atm, durante 500 ps, com a mesma restrição sobre os átomos do soluto. E por fim, a equilibração final é feita sem qualquer restrição de movimentação de átomos por 5 ns. São mantidos os parâmetros da etapa de equilibração de densidade, exceto pela restrição dos átomos.
+    Após isso, uma segunda minimização é feita considerando todo o sistema livre.  Uma vez feita a minimização, o sistema é submetido a um aquecimento linear da temperatura, de 0 a 310K durante 200 ps, com uma restrição harmônica de 10 kcal.mol-1 sobre os átomos de soluto, utilizando ensemble NVT. Uma etapa de equilibração da densidade das águas é feita, utilizando um ensemble NPT, utilizando termostato de Langevin com frequência de choque igual a 2 e barostato Monte Carlo para manterem temperatura e pressão respectivamente a 310 K e 1 atm, durante 500 ps, com a mesma restrição sobre os átomos do soluto. E por fim, a equilibração final é feita sem qualquer restrição de movimentação de átomos por 5 ns. São mantidos os parâmetros da etapa de equilibração de densidade, exceto pela restrição dos átomos.
 
 
 ***3 - Produção da dinâmica aquecida***   
