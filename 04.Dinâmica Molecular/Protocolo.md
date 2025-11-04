@@ -199,6 +199,11 @@ usar um editor de texto simples como o vi (Ubuntu), ou Bloco de Notas (Windows),
   - Neste turorial, nós definimos como resíduos da interface de ligação todos aqueles resíduos da proteína cujo seu atómo carbono alfa está a 8Å de distância do atómo carbono alfa de qualquer resíduos do anticorpo.
   - Para esse cálculo serão necessários todos os arquivos de trajetoria resultantes da simulação e o arquivo de topologia de input.
 
+  - Antes de executar essa etapa, abra seu arquivo e verifique o ID das cadeias do complexo. Para o nosso exemplo:
+       - cadeia A pertence a cadeia pesada do anticorpo   
+       - cadeia B pertence a cadeia leve do anticorpo    
+       - cadeia Z pertence a  PD1    
+
   Crie um arquivo **analise.in** e escreve nele o seguinte:
    > Carregue os arquivos de topologia e os de trajetoria de input
  
@@ -214,7 +219,7 @@ usar um editor de texto simples como o vi (Ubuntu), ou Bloco de Notas (Windows),
    `autoimage`         
      
    > Calcular o RMSD                     
-   `rmsd 1-113<:8.0&:114-352@CA|:114-352<:8.0&:1-113@CA first :1-113<:8.0&:114-352@CA|:114-352<:8.0&:1-113@CA out rsmd-5ggs.dat`
+   `rmsd 1-239<:8.0&:240-352@CA|:240-352<:8.0&:1-239@CA first :1-239<:8.0&:240-352@CA|:240-352<:8.0&:1-239@CA out rsmd-5ggs.dat`
   
    > Calcular interações de ligação de Hidrogênio            
    `hbond :1-352 out interface_hbonds.dat avgout agv_interface_hbonds.dat nointramol`
@@ -227,7 +232,7 @@ reference 5GGS_capeado_solvated.rst7
 trajin mdProd1.nc                  
 autoimage                                            
 
-rmsd 1-113<:8.0&:114-352@CA|:114-352<:8.0&:1-113@CA first :1-113<:8.0&:114-352@CA|:114-352<:8.0&:1-113@CA out rsmd-5ggs.dat                      
+rmsd 1-239<:8.0&:240-352@CA|:240-352<:8.0&:1-239@CA first :1-239<:8.0&:240-352@CA|:240-352<:8.0&:1-239@CA out rsmd-5ggs.dat    
 hbond :1-352 out interface_hbonds.dat avgout agv_interface_hbonds.dat nointramol                            
                
 run              
