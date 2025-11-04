@@ -143,16 +143,15 @@ usar um editor de texto simples como o vi (Ubuntu), ou Bloco de Notas (Windows),
         - Nos arquivos [min1.in](https://github.com/alineoa/Bioinformatica-Estrutural_PPGBiotec/blob/main/04.Din%C3%A2mica%20Molecular/inputs/run_MD/min1.in), [min2.in](https://github.com/alineoa/Bioinformatica-Estrutural_PPGBiotec/blob/main/04.Din%C3%A2mica%20Molecular/inputs/run_MD/min2.in), [heat.in](https://github.com/alineoa/Bioinformatica-Estrutural_PPGBiotec/blob/main/04.Din%C3%A2mica%20Molecular/inputs/run_MD/heat.in), [dens.in](https://github.com/alineoa/Bioinformatica-Estrutural_PPGBiotec/blob/main/04.Din%C3%A2mica%20Molecular/inputs/run_MD/dens.in) e [equ,in](https://github.com/alineoa/Bioinformatica-Estrutural_PPGBiotec/blob/main/04.Din%C3%A2mica%20Molecular/inputs/run_MD/equ.in) altere o parametro/flag ``restraintmask=':'`` insere o número total de resíduos qdo seu sistema. Por exemplo, se no total (proteína + anticorpo), o teu sistema tem 352 reśiduos, você deve preencher da seguinte maneira: ``restraintmask=':1-352'``. Esse valor corresponde exatamente ao número de resíduos de sistema usado nesta prática.     
   
     - Para executar o relaxamento; execute os seguintes comandos na ordem abaixo!
-    
-        pmemd.cuda -O -i min1.in  -p 5GGS_capeado_solvated.prmtop -o min1.out -c 5GGS_capeado_solvated.rst7 -x min1.nc -r min1.rst  -ref 5GGS_capeado_solvated.rst7
-        pmemd.cuda -O -i min2.in  -p 5GGS_capeado_solvated.prmtop -o min2.out -c min1.rst -r min2.rst -ref min1.rst
-        pmemd.cuda -O -i heat.in  -p 5GGS_capeado_solvated.prmtop -o heat.out -c min2.rst -r heat.rst -x heat.nc -ref min2.rst
-        pmemd.cuda -O -i dens.in  -p 5GGS_capeado_solvated.prmtop -o dens.out -c heat.rst -r dens.rst -x dens.nc -ref heat.rst
-        pmemd.cuda -O -i equ.in   -p 5GGS_capeado_solvated.prmtop -o equ.out  -c dens.rst -r equ.rst  -x equ.nc  -ref dens.rst
-
-  # TERCEIRO PASSO - PRODUÇÃO DA DINÂMICA
-  - Os arquivos de input com todos parametros/flags necessárias para simular da dinâmica  molecular aquecida relaxação do sistema já se encontram prontos em **[input_files](https://github.com/SFBBGroup/BioFun/tree/main/protocols/Heated_MD_Amber/input_files)**.   
-    
+      
+       ```     
+        pmemd.cuda -O -i min1.in  -p 5GGS_capeado_solvated.prmtop -o min1.out -c 5GGS_capeado_solvated.rst7 -x min1.nc -r min1.rst  -ref 5GGS_capeado_solvated.rst7                     
+        pmemd.cuda -O -i min2.in  -p 5GGS_capeado_solvated.prmtop -o min2.out -c min1.rst -r min2.rst -ref min1.rst              
+        pmemd.cuda -O -i heat.in  -p 5GGS_capeado_solvated.prmtop -o heat.out -c min2.rst -r heat.rst -x heat.nc -ref min2.rst             
+        pmemd.cuda -O -i dens.in  -p 5GGS_capeado_solvated.prmtop -o dens.out -c heat.rst -r dens.rst -x dens.nc -ref heat.rst                 
+        pmemd.cuda -O -i equ.in   -p 5GGS_capeado_solvated.prmtop -o equ.out  -c dens.rst -r equ.rst  -x equ.nc  -ref dens.rst                                
+       ```
+       
 ***Passo 8 - Produção da dinâmica molecular***    
   - A etapa de produção da dinâmica ocorre em uma produção de 30 ns a 310 K, com todo sistema solto, sem restrições.
   - Para executar a relaxação execute os seguintes comandos na ordem abaixo!
