@@ -89,8 +89,8 @@ usar um editor de texto simples como o vi (Ubuntu), ou Bloco de Notas (Windows),
        - ***carregar o complexo***     
        `sis=loadpdb 5GGS_capeado.pdb`
 
-       - ***verificar se há choques estéricos entre átomos do sistema***     
-       `check sis`
+       - ***verificar se há choques estéricos entre átomos do sistema***             
+       `check sis`     
 
        - ***Especificar quais cisteínas formam interações de pontes dissulfeto***
        - Renomear a CYS para CYX apenas informa ao LEaP que uma cisteína está envolvida em uma ponte dissulfeto, não quais cisteínas estão ligadas a quais. É isso que definiremos a seguir. O comando de ligação informa ao LEaP que estamos formando uma ligação entre esses dois átomos específicos.             
@@ -104,45 +104,29 @@ usar um editor de texto simples como o vi (Ubuntu), ou Bloco de Notas (Windows),
        `addions sis Cl- 6`     
        - verifica novamente se a carga foi zerada
        `check sis`
+    
          ***É esperado o resultado zero (0)***
   
        - ***adicionar caixa de água octaédrica***   
-       - Vamos solvatar o nosso sistema em solvente explícito. O parâmetro SolvateOct instrui o LEaP a solvatar o arquivo 5GGS_capeado.pdb em uma caixa com formato de octaedro. Esse formato imita uma esfera e é um formato de caixa muito comum. O número indica ao LEaP o tamanho da caixa. Aqui, cada parte da proteína estará a pelo menos 10,0 Å da borda da nossa caixa preenchida com água. Geralmente, são necessárias pelo menos três camadas de solvatação em todos os lados da superfície da proteína para uma simulação de dinâmica molecular, e 10,0 Å garantem isso.      
-       `solvateoct sis TIP3PBOX 10.0`    
+       - Vamos solvatar o nosso sistema em solvente explícito. O parâmetro SolvateOct instrui o LEaP a solvatar o arquivo 5GGS_capeado.pdb em uma caixa com formato de octaedro. Esse formato imita uma esfera e é um formato de caixa muito comum. O número indica ao LEaP o tamanho da caixa. Aqui, cada parte da proteína estará a pelo menos 10,0 Å da borda da nossa caixa preenchida com água. Geralmente, são necessárias pelo menos três camadas de solvatação em todos os lados da superfície da proteína para uma simulação de dinâmica molecular, e 10,0 Å garantem isso.
+       `solvateoct sis TIP3PBOX 10.0` 
 
-
-       `sis=loadpdb 5GGS_capeado.pdb`
-
-       - ***Adição de concentração salina ***     
+       - ***Adição de concentração salina***     
        - No passo anterior, nós apenas neutralizamos a carga do sistema, para melhor mimetizar as condições biológicas das proteínas precisamos também adicionar [150 mM de NaCl](http://dx.doi.org/10.1016/B978-0-12-411604-7.00002-7). Isso exigirá a adição de pares de íons Na+ e Cl-, com base no volume da caixa.    
      
        - Para esse calculo vamos usar o servidor x,     
        - O comando abaixo vai adicionar a quantidade de íons de forma aleatória no sistema e tentará evitar colisões.    
        `addionsRand sis Na+ 71 Cl- 71`
 
+       - ***Salvar os arquivos de topologia (prmtop) e de coordenadas (rst7)***        
+       `saveamberparm sis 5GGS_capeado_solvated.prmtop 5GGS_capeado_solvated.rst7`
+
+       - Neutralizamos a carga do nosso sistema adicionando contra-íons. O comando abaixo vai verificar a carga atual do sistema. Se a carga for por exemplo 6, vamos adicionar 6 átomos de Cl- para balancear a carga
+           - O Arquivo de topologia contem tipos de átomos e suas cargas parciais, listas de ligações, ângulos e torções, parâmetros do campo de força aplicados.
+           - O arquivo de coordenadas (arquivo restart) contém as coordenadas tridimensionais (x, y, z) de todos os átomos, e opcionalmente, velocidades atômicas (caso seja um restart de simulação).    
 
 
 
-
-
-
-
-
-   
-- Inicialmente é importante que o seu arquivo PDB de entrada contenha apenas as informações necessárias para rodar a simulação. É fortemente sugerido remover as informações desnecessárias mantendo apenas as linhas: ***ATOM, TER e END***
-- Se certificar que o ***id cadeias*** estão organizadas na ordem desejada. Neste protocolo, recomendasse que a cadeia do antigeno seja renomeada para ***A***, e movida para o topo (em primeiro) no arquivo PDB. A cadeia pesada do anticorpo seja renomeada para ***H***  e a cadeia leve para ***L***
-
-***-  Calcular o estado de protonação do sistema e renomear os resíduos de acordo com seus estados de protonação***
-
-***-  Verificar se há ligações dissulfeto, renomear a cisteína involvidas nessas ligações e criar o registros SSBOND no arquivo pdb***
-
-***-  Remover os hidrogénios***
-
-***-  Neutralizar as cargas no N-terminal e no C-terminal usando o [script de capeamento desse endereço](https://github.com/SFBBGroup/Notebook_EduardoMenezes/tree/main/Mestrado/simulacao/scripts/capeamento)***
-
-***-  Criar os arquivos de coordenada e topologia usando o tleap do amber***
-
-***-  Fazer o Reparticionamento de massa de hidrogênio (HMR) do sistema do arquivo de topologia através do parmed***  
 
 ***2 - Relaxação do sistema***   
   - A relaxação será dividida em quatro etapas. Inicialmente considerando somente as águas e íons livres e todo o soluto fixo por uma força de 500 kcal.mol-1. Após isso, uma segunda minimização é feita considerando todo o sistema livre.  Uma vez feita a minimização, o sistema é submetido a um aquecimento linear da temperatura, de 0 a 310K durante 200 ps, com uma restrição harmônica de 10 kcal.mol-1 sobre os átomos de soluto, utilizando ensemble NVT. Uma etapa de equilibração da densidade das águas é feita, utilizando um ensemble NPT, utilizando termostato de Langevin com frequência de choque igual a 2 e barostato Monte Carlo para manterem temperatura e pressão respectivamente a 310 K e 1 atm, durante 500 ps, com a mesma restrição sobre os átomos do soluto. E por fim, a equilibração final é feita sem qualquer restrição de movimentação de átomos por 5 ns. São mantidos os parâmetros da etapa de equilibração de densidade, exceto pela restrição dos átomos.
