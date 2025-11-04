@@ -118,8 +118,8 @@ usar um editor de texto simples como o vi (Ubuntu), ou Bloco de Notas (Windows),
          ***É esperado o resultado zero (0)***
   
        - ***adicionar caixa de água octaédrica***   
-       - Vamos solvatar o nosso sistema em solvente explícito. O parâmetro SolvateOct instrui o LEaP a solvatar o arquivo 5GGS_capeado.pdb em uma caixa com formato de octaedro. Esse formato imita uma esfera e é um formato de caixa muito comum. O número indica ao LEaP o tamanho da caixa. Aqui, cada parte da proteína estará a pelo menos 10,0 Å da borda da nossa caixa preenchida com água. Geralmente, são necessárias pelo menos três camadas de solvatação em todos os lados da superfície da proteína para uma simulação de dinâmica molecular, e 10,0 Å garantem isso.
-       `solvateoct sis TIP3PBOX 10.0` 
+       - Vamos solvatar o nosso sistema em solvente explícito. O parâmetro SolvateOct instrui o LEaP a solvatar o arquivo 5GGS_capeado.pdb em uma caixa com formato de octaedro. Esse formato imita uma esfera e é um formato de caixa muito comum. O número indica ao LEaP o tamanho da caixa. Aqui, cada parte da proteína estará a pelo menos 10,0 Å da borda da nossa caixa preenchida com água. Geralmente, são necessárias pelo menos três camadas de solvatação em todos os lados da superfície da proteína para uma simulação de dinâmica molecular, e 10,0 Å garantem isso.                  
+       `solvateoct sis TIP3PBOX 10.0`       
 
        - ***Adição de concentração salina***     
        - No passo anterior, nós apenas neutralizamos a carga do sistema, para melhor mimetizar as condições biológicas das proteínas precisamos também adicionar [150 mM de NaCl](http://dx.doi.org/10.1016/B978-0-12-411604-7.00002-7). Isso exigirá a adição de pares de íons Na+ e Cl-, com base no volume da caixa.    
