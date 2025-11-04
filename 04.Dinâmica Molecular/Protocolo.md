@@ -110,11 +110,11 @@ usar um editor de texto simples como o vi (Ubuntu), ou Bloco de Notas (Windows),
 
        - ***Neutralizar a carga do sistema***   
        - Neutralizamos a carga do nosso sistema adicionando contra-íons. O comando abaixo vai verificar a carga atual do sistema. Se a carga for por exemplo 6, vamos adicionar 6 átomos de Cl- para balancear a carga.    
-       `check sis`
-       `addions sis Cl- 6`     
-       - verifica novamente se a carga foi zerada
-       `check sis`
-    
+       `charge sis`                                   
+       `addions sis Cl- 6`                                 
+       - verifica novamente se a carga foi zerada                             
+       `check sis`                       
+                                
          ***É esperado o resultado zero (0)***
   
        - ***adicionar caixa de água octaédrica***   
