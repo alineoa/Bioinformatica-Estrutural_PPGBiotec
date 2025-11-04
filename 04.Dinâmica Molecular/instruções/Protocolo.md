@@ -14,7 +14,8 @@
 - usa o comando abaixo e verifica essas informações.    
   `tail 5ggs_cutted.pdb`       
 - output esperado:             
-![](https://github.com/alineoa/Bioinformatica-Estrutural_PPGBiotec/blob/main/04.Din%C3%A2mica%20Molecular/data/tail%20arquivo.png)
+<img width="609" height="151" alt="image" src="https://github.com/user-attachments/assets/87e62dd6-3293-41ca-80d2-722fa5a62362" />
+
 
 **2.3.** Limpar o arquivo PDB   
 - Depois de visualizar a molécula, você pode remover todos os átomos que não pertencem às proteínas do teu sistema (por exemplo, moléculas de água cristalina, ligantes, etc.). Para excluir esses átomos (rotulados como "HETATM" no arquivo PDB) e, eventualmente, suas conexões, você pode:
@@ -32,15 +33,16 @@ usar um editor de texto simples como o vi (Ubuntu), ou Bloco de Notas (Windows),
 ***Passo 3 - Determinar os estados de protonação a um dado pH***         
  - Nós estamos tentando simular um sistema biológico real, que nem sempre é representado por um arquivo PDB. Um exemplo disso é o estado de protonação do resíduo de aminoácido histidina, que dependendo das condições de pH do ambiente, este resíduo pode existir na forma neutra (pH alto, HID e HIE) ou protonada (pH baixo, HIP), que diferem em carga e geometria do anel aromático. A forma neutra do anel imidazol aromático pode participar das interações cátion-π com vários cátions metálicos ou resíduos de Lys e Arg. Já na forma protonada, doa interações cátion-π com outros resíduos aromáticos [Phe, Tyr e Trp](https://doi.org/10.1038/s41598-024-51905-y). A dica é: conheça seu sistema e como ele funciona, isso vai ajudar a simular e obter resultados mais próximos da realidade.
 
-![](https://github.com/alineoa/Bioinformatica-Estrutural_PPGBiotec/blob/main/04.Din%C3%A2mica%20Molecular/data/histidinas.jpg)
+<img width="1190" height="307" alt="image" src="https://github.com/user-attachments/assets/aba2e7c7-7fb0-4ad3-809b-1f6382e950bc" />                                
 
+            
 - Antes de do cálculo , crie  uma copia de segurança do seu arquivo.      
 `cp 5ggs_cutted.pdb 5GGS_clean.pdb`
 
 - Vamos usar o [servidor](https://server.poissonboltzmann.org/pdb2pqr) do programa PDB2QR para fazer esse cálculo, usando o método PROPKA com o valor de ***pH 8***, o mesmo valor usado no experimento da obtenção dessa estrutura reportado no [artigo](https://doi.org/10.1038/ncomms13354). Carrega o arquivo ***5GGS_clean.pdb*** no servidor e selecione as opções igual a figura abaixo e clique em **start job**.
   
-![](https://github.com/alineoa/Bioinformatica-Estrutural_PPGBiotec/blob/main/04.Din%C3%A2mica%20Molecular/data/pdb2qr.png)
-
+<img width="1330" height="854" alt="image" src="https://github.com/user-attachments/assets/e59c0ed8-f0f1-4676-aacd-27565b1c5ae2" />                        
+                            
 - A página a seguir, é a de resultados. Baixa o arquivo no formato PQR, geralmente é o terceiro output se contares de cima para baixo.      
 ![](https://github.com/alineoa/Bioinformatica-Estrutural_PPGBiotec/blob/main/04.Din%C3%A2mica%20Molecular/data/output_pdb2qr.png)
 - Mova esse arquivo para o seu diretorio e renomeie para ***5ggs_pos_pdb2qr.pqr***
