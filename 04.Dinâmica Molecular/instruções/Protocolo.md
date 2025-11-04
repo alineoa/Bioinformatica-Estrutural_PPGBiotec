@@ -153,15 +153,48 @@ usar um editor de texto simples como o vi (Ubuntu), ou Bloco de Notas (Windows),
        ```
        
 ***Passo 8 - Produção da dinâmica molecular***    
-  - A etapa de produção da dinâmica ocorre em uma produção de 30 ns a 310 K, com todo sistema solto, sem restrições.
-  - Para executar a relaxação execute os seguintes comandos na ordem abaixo!
-
-       pmemd.cuda -O -i heatMD310.in -p 5GGS_capeado_solvated.prmtop -o mdProd1.out -c equ.rst -r mdProd1.rst -x mdProd1.nc
-
-
-***Passo 9 - Análise dos resultados***      
-
-***4 - Calcular o RMSD da interface de ligação usando o cpptraj***   
+  - A etapa de produção da dinâmica ocorre em uma produção de 30 ns a 310 K, com todo sistema solto, sem restrições.       
+  - Para executar a relaxação execute os seguintes comandos na ordem abaixo!    
+       ``pmemd.cuda -O -i heatMD310.in -p 5GGS_capeado_solvated.prmtop -o mdProd1.out -c equ.rst -r mdProd1.rst -x mdProd1.nc``
+ 
+***Passo 9 - Análise dos resultados***         
+  **9.1. Calcular o RMSD da interface de ligação usando o cpptraj**        
   - Neste turorial, nós definimos como resíduos da interface de ligação todos aqueles resíduos da proteína cujo seu atómo carbono alfa está a 8Å de distância do atómo carbono alfa de qualquer resíduos do anticorpo.
-  - Para esse cálculo serão necessários todos os arquivos de trajetoria resultantes da simulação aquecida e o arquivo de topologia de input.
+  - Para esse cálculo serão necessários todos os arquivos de trajetoria resultantes da simulação e o arquivo de topologia de input.
+
+  Crie um arquivo **analise.in** e escreve nele o seguinte:
+   > Carregue os arquivos de topologia e os de trajetoria de input
+ 
+   ```    
+   parm 5GGS_capeado_solvated.prmtop    
+   reference 5GGS_capeado_solvated.rst7     
+   ```
+ 
+   > Carrega os arquivos de trajetoria da simulação      
+   `trajin mdProd1.nc`
+        
+   > Recentraliza as moléculas conforme as imagens periódicas            
+   `autoimage`         
+     
+   > Calcular o RMSD                     
+   `rmsd 1-113<:8.0&:114-352@CA|:114-352<:8.0&:1-113@CA first :1-113<:8.0&:114-352@CA|:114-352<:8.0&:1-113@CA out rsmd-5ggs.dat`
+  
+   > Calcular interações de ligação de Hidrogênio            
+   `hbond :1-352 out interface_hbonds.dat avgout agv_interface_hbonds.dat nointramol`
+
+- No final o seu arquivo deve se parecer com isso:           
+```    
+parm 5GGS_capeado_solvated.prmtop           
+reference 5GGS_capeado_solvated.rst7              
+            
+trajin mdProd1.nc                  
+autoimage                                            
+
+rmsd 1-113<:8.0&:114-352@CA|:114-352<:8.0&:1-113@CA first :1-113<:8.0&:114-352@CA|:114-352<:8.0&:1-113@CA out rsmd-5ggs.dat                      
+hbond :1-352 out interface_hbonds.dat avgout agv_interface_hbonds.dat nointramol                            
+               
+run              
+```
+  
+  
 
