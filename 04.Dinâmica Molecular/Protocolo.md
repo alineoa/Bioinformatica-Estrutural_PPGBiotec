@@ -136,7 +136,8 @@ usar um editor de texto simples como o vi (Ubuntu), ou Bloco de Notas (Windows),
 
           **(ii)** número de moléculas de água
             Essa informação você acha na última linha de output do comando de inserir a caixa de água. Essa linha começa com a palavra *added*    
-            <img width="718" height="197" alt="image" src="https://github.com/user-attachments/assets/7b0b4739-09dc-4132-b7cc-d8bafff390c8" />                                   
+            <img width="702" height="199" alt="image" src="https://github.com/user-attachments/assets/d36bfbe5-179b-4aa9-a6ec-dc1689db39a5" />
+                                   
 
        - Preecha esses valores no servidor dd, deve parecer igual a figura abaixo
             <img width="427" height="387" alt="image" src="https://github.com/user-attachments/assets/ee2fb68c-59ca-45b5-b356-b6342fd021a2" />                                           
