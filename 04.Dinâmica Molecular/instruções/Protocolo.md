@@ -60,7 +60,9 @@ usar um editor de texto simples como o vi (Ubuntu), ou Bloco de Notas (Windows),
    - Esse arquivo terá a informação dos CONECTS no final do arquivos
     
 ***Passo 6 - Neutralizar os terminais***      
- - As proteínas e os peptídeos têm duas extremidades conhecidas como N-terminal no início da cadeia (grupo amino) e C-terminal no final da cadeia (grupo carboxila). Se por algum motivo você clivar/fragmentar a proteína, não é interessante deixar os grupos desses terminais com cargas livres (NH3+ e COO−) pois essas cargas não desejadas podem gerar interações artificiais que não que existe no seu sistema. E para evitar isso, existe o que chamamos de capeamento que é adicionar resíduos especiais para neutralizar esses terminais.    
+ - As proteínas e os peptídeos têm duas extremidades conhecidas como N-terminal no início da cadeia (grupo amino) e C-terminal no final da cadeia (grupo carboxila). Se por algum motivo você clivar/fragmentar a proteína, não é interessante deixar os grupos desses terminais com cargas livres (NH3+ e COO−) pois essas cargas não desejadas podem gerar interações artificiais que não que existe no seu sistema. E para evitar isso, existe o que chamamos de capeamento que é adicionar resíduos especiais para neutralizar esses terminais.
+   - Faça uma copia do seu arquivo `cp 5GGS_noHID_pdb4amber.pdb 5GGS_capeado.pdb`
+   - Abra o aquivo ***5GGS_capeado.pdb*** com um editor de texto e edite conforme as instruções abaixo.       
    - O N-terminal é capeado usando o resíduo ACE, um grupo [acetil](https://doi.org/10.1038/s12276-018-0116-z) [−C(= O) − CH3]. O início do seu arquivo deve ficar igual a figura abaixo:         
      ![](https://github.com/alineoa/Bioinformatica-Estrutural_PPGBiotec/blob/main/04.Din%C3%A2mica%20Molecular/data/grupo_acetil.png)
      - Note que o átomo carbono alfa do resíduo é substituído por CH3, e o nome do resíduo do átomo é substituído por ACE. Os átomos de hidrogênios devem ser omitidos, eles serão automaticamente adicionados se o nome do resíduo e dos átomos pesamos estiverem corretos.
@@ -78,7 +80,13 @@ usar um editor de texto simples como o vi (Ubuntu), ou Bloco de Notas (Windows),
 - Dessa forma, antes de executar a simulação é necessário colocar o nosso sistema em condições similares. Para isso vamos usar o a ferramenta tleap do amber e executar os seguintes comandos:    
 
   **7.1.** Campo de força
-   - A dinâmica molecular resolve a segunda lei de Newton para todos os átomos de um sistema, usando as forças derivadas do campo de força para prever como eles se movem ao longo do tempo. Conhecer o seu sistema é importante pois determina escolha do campo de força. Para a nossa aula, o nosso tipo de molécula é uma proteína, e é sugerido pelos desenvolvedores do AMBER usar o campo de força ff14SB , em conjunto com o modelo de água tip3p para esse sistema.  
+   - A dinâmica molecular resolve a segunda lei de Newton para todos os átomos de um sistema, usando as forças derivadas do campo de força para prever como eles se movem ao longo do tempo. Conhecer o seu sistema é importante pois determina escolha do campo de força. Para a nossa aula, o nosso tipo de molécula é uma proteína, e é sugerido pelos desenvolvedores do AMBER usar o campo de força ff14SB , em conjunto com o modelo de água tip3p para esse sistema.
+       - Digite `tleap`   
+       `source leaprc.protein.ff14SB`    
+       `source leaprc.water.tip3p`
+
+
+     
 
 
 
