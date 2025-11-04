@@ -109,9 +109,9 @@ usar um editor de texto simples como o vi (Ubuntu), ou Bloco de Notas (Windows),
        `bond sis.262.SG sis.330.SG`                       
 
        - ***Neutralizar a carga do sistema***   
-       - Neutralizamos a carga do nosso sistema adicionando contra-íons. O comando abaixo vai verificar a carga atual do sistema. Se a carga for por exemplo 6, vamos adicionar 6 átomos de Cl- para balancear a carga.    
+       - Neutralizamos a carga do nosso sistema adicionando contra-íons. O comando abaixo vai verificar a carga atual do sistema. Se a carga for por exemplo 5, vamos adicionar 6 átomos de Cl- para balancear a carga.    
        `charge sis`                                   
-       `addions sis Cl- 6`                                 
+       `addions sis Cl- 5`                                 
        - verifica novamente se a carga foi zerada                             
        `charge sis`                          
                                 
