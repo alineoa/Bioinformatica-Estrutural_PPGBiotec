@@ -1,0 +1,27 @@
+&cntrl
+ imin=0,
+ irest=1,
+ ntx=5,
+ ntxo=1,
+ dt=0.004, 
+ nstlim=125000,
+ ntpr=500,
+ ntwx=500,
+ temp0=310.0,
+ gamma_ln=2.0,
+ ntt=3,
+ cut=10.0,
+ ntc=2,
+ ntf=2,
+ ntwr=5000
+ ntb=2, 
+ ntp=1, 
+ ntr=1, 
+ pres0=1.013,
+ ig=-1,
+ taup=1.0, 
+ barostat=2,
+ restraintmask=':1-352',
+ restraint_wt=10.0,
+/
+/
