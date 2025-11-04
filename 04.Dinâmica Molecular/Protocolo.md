@@ -140,9 +140,13 @@ usar um editor de texto simples como o vi (Ubuntu), ou Bloco de Notas (Windows),
                                    
 
        - Preecha esses valores no servidor dd, deve parecer igual a figura abaixo
-            <img width="427" height="387" alt="image" src="https://github.com/user-attachments/assets/ee2fb68c-59ca-45b5-b356-b6342fd021a2" />                                           
-        - Clique em **Calculate** e anota o resultado, que deve ser similar a figura abaixo                                               
-            <img width="294" height="121" alt="image" src="https://github.com/user-attachments/assets/3e04b717-95b4-44b8-8bc2-7156c9b71b3a" />                                             
+            <img width="404" height="376" alt="image" src="https://github.com/user-attachments/assets/dc772014-18d2-491c-8c37-ad6effb2cadc" />
+                                           
+        - Clique em **Calculate** e anota o resultado, que deve ser similar a figura abaixo
+    
+                     
+             <img width="294" height="126" alt="image" src="https://github.com/user-attachments/assets/3a291719-9945-484d-b984-7464de53309d" />
+                                             
    
        - Use o comando abaixo no tLeap para adicionar a quantidade de íons de forma aleatória no sistema.    
        `addionsRand sis Na+ 54 Cl- 54`
