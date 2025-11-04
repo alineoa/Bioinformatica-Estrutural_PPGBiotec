@@ -117,15 +117,23 @@ usar um editor de texto simples como o vi (Ubuntu), ou Bloco de Notas (Windows),
        - Para esse calculo vamos usar o servidor [SLTCAP](https://www.phys.ksu.edu/personal/schmit/SLTCAP/SLTCAP.html),
          - Duas informações serão necessárias para esse cálculo:
            
-         - (i) massa do complexo proteico
-            - Para obtermos esse valor, vamos usar este [servidor](https://web.expasy.org/compute_pi/). Nele será necessário introduzir a sequencia de aminoácido do complexo inteiro. Essa informação você encontra [aqui](https://github.com/alineoa/Bioinformatica-Estrutural_PPGBiotec/blob/main/04.Din%C3%A2mica%20Molecular/inputs/sequencia-complexo.txt)
+          **(i)** massa do complexo proteico
+          Para obtermos esse valor, vamos usar este [servidor](https://web.expasy.org/compute_pi/). Nele será necessário introduzir a sequência de aminoácidos do complexo inteiro. Essa informação você encontra [aqui](https://github.com/alineoa/Bioinformatica-Estrutural_PPGBiotec/blob/main/04.Din%C3%A2mica%20Molecular/inputs/sequencia-complexo.txt)
             - O resultado esperado deve ser similar a figura abaixo:
-            ![](https://github.com/alineoa/Bioinformatica-Estrutural_PPGBiotec/blob/main/04.Din%C3%A2mica%20Molecular/data/calculo%20de%20massa.png)
-            Vamos usar o valor de Mw(peso Molar)
+            <img width="536" height="466" alt="image" src="https://github.com/user-attachments/assets/a16a145c-7bf4-428a-b083-dd3c44ca976a" />
 
-         - (ii) número de moléculas de água
-        
-         -  
+            Vamos usar o valor de Mw(peso Molecular)   
+
+          **(ii)** número de moléculas de água
+            Essa informação você acha na última linha de output do comando de inserir a caixa de água. Essa linha começa com a palavra *added*    
+            <img width="718" height="197" alt="image" src="https://github.com/user-attachments/assets/7b0b4739-09dc-4132-b7cc-d8bafff390c8" />
+
+       - Preecha esses valores no servidor dd, deve parecer igual a figura abaixo
+            <img width="427" height="387" alt="image" src="https://github.com/user-attachments/assets/ee2fb68c-59ca-45b5-b356-b6342fd021a2" />
+        - Clique em **Calculate** e anota o resultado, que deve ser similar a figura abaixo
+            <img width="294" height="121" alt="image" src="https://github.com/user-attachments/assets/3e04b717-95b4-44b8-8bc2-7156c9b71b3a" />
+
+
        - O comando abaixo vai adicionar a quantidade de íons de forma aleatória no sistema e tentará evitar colisões.    
        `addionsRand sis Na+ 71 Cl- 71`
 
