@@ -14,7 +14,7 @@
  tempi=310.0,     ! starting temperature
  temp0=310.0,     ! final temperature
  dt=0.002,        ! timestep
- nstlim=5000000,  ! number of timesteps
+ nstlim=15000000,  ! number of timesteps
 
  ntb=2,           ! constant pressure
  ntp=1,           ! constant pressure
