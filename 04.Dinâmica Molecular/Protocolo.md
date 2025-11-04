@@ -152,7 +152,11 @@ usar um editor de texto simples como o vi (Ubuntu), ou Bloco de Notas (Windows),
        `addionsRand sis Na+ 54 Cl- 54`
  
        - ***Salvar os arquivos de topologia (prmtop) e de coordenadas (rst7)***        
-       `saveamberparm sis 5GGS_capeado_solvated.prmtop 5GGS_capeado_solvated.rst7`                     
+       `saveamberparm sis 5GGS_capeado_solvated.prmtop 5GGS_capeado_solvated.rst7`
+                                         
+       - ***Encerre o tleap***    
+       - Digite `quit`    
+                     
 
 ***Passo 8 - Relaxação do sistema***    
   - A relaxação será dividida em quatro etapas.            
