@@ -173,8 +173,8 @@ usar um editor de texto simples como o vi (Ubuntu), ou Bloco de Notas (Windows),
        
 ***Passo 8 - Produção da dinâmica molecular***    
   - A etapa de produção da dinâmica ocorre em uma produção de 30 ns a 310 K, com todo sistema solto, sem restrições.       
-  - Para executar a relaxação execute os seguintes comandos na ordem abaixo!    
-       ``pmemd.cuda -O -i heatMD310.in -p 5GGS_capeado_solvated.prmtop -o mdProd1.out -c equ.rst -r mdProd1.rst -x mdProd1.nc``
+  - Para executar a relaxação execute os seguintes comandos na ordem abaixo, usando o arquivo [mdPROD.in](https://github.com/alineoa/Bioinformatica-Estrutural_PPGBiotec/blob/main/04.Din%C3%A2mica%20Molecular/inputs/run_MD/mdPROD.in)!      
+       ``pmemd.cuda -O -i mdPROD.in -p 5GGS_capeado_solvated.prmtop -o mdProd1.out -c equ.rst -r mdProd1.rst -x mdProd1.nc``
  
 ***Passo 9 - Análise dos resultados***         
   **9.1. Calcular o RMSD da interface de ligação usando o cpptraj**        
