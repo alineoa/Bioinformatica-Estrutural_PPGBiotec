@@ -1,0 +1,7 @@
+&cntrl
+ imin = 1,
+ maxcyc = 20000,
+ ntpr = 100,
+ ntr = 0,
+ ncyc = 10000,
+/
