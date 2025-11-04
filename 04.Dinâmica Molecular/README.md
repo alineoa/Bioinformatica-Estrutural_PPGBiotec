@@ -19,4 +19,5 @@ Ao final desta prática, você será capaz de:
 
 - Os arquivos de entrada estão na pasta [inputs](https://github.com/alineoa/Bioinformatica-Estrutural_PPGBiotec/tree/main/04.Din%C3%A2mica%20Molecular/inputs)    
 - Os outpus esperados estão na pasta [outputs_esperados](https://github.com/alineoa/Bioinformatica-Estrutural_PPGBiotec/tree/main/04.Din%C3%A2mica%20Molecular/outputs_esperados)         
-- O Arquivo [protocolo](https://github.com/alineoa/Bioinformatica-Estrutural_PPGBiotec/blob/main/04.Din%C3%A2mica%20Molecular/Protocolo.md) contém as intruções e os comandos para a prática
+- O Arquivo [protocolo](https://github.com/alineoa/Bioinformatica-Estrutural_PPGBiotec/blob/main/04.Din%C3%A2mica%20Molecular/Protocolo.md) contém as intruções e os comandos para a prática    
+- Os gráfico serão plotados usando este [colad](https://colab.research.google.com/drive/1ZR92F636_iWE12LKWWZ8H3XZ1TYKKAU4?usp=sharing)
