@@ -1,4 +1,4 @@
-# Protocolo para uma simulação de Dinâmica Molecular Clássica de um sistema proteína-Anticorpo
+# Protocolo para uma simulação de Dinâmica Molecular Clássica de um sistema antígeno-anticorpo
 
 **Passo 1 - Obtenção do arquivo PDB**       
   **1.1.** Baixa o arquivo [5ggs_cutted.pdb](https://github.com/alineoa/Bioinformatica-Estrutural_PPGBiotec/blob/main/04.Din%C3%A2mica%20Molecular/inputs/5ggs_cutted.pdb) e mova para o seu diretorio.       
@@ -69,15 +69,19 @@ usar um editor de texto simples como o vi (Ubuntu), ou Bloco de Notas (Windows),
    - Faça uma copia do seu arquivo: `cp 5GGS_noHID_pdb4amber.pdb 5GGS_capeado.pdb`
    - Abra o aquivo ***5GGS_capeado.pdb*** com um editor de texto e edite conforme as instruções abaixo.       
    - O N-terminal é capeado usando o resíduo ACE, um grupo [acetil](https://doi.org/10.1038/s12276-018-0116-z) [−C(= O) − CH3]. O início do seu arquivo deve ficar igual a figura abaixo:         
-     ![](https://github.com/alineoa/Bioinformatica-Estrutural_PPGBiotec/blob/main/04.Din%C3%A2mica%20Molecular/data/grupo_acetil.png)
+     <img width="735" height="81" alt="image" src="https://github.com/user-attachments/assets/382d890c-014d-489b-bd0c-628aa7d9c889" />                     
+
      - Note que o átomo carbono alfa do resíduo é substituído por CH3, e o nome do resíduo do átomo é substituído por ACE. Os átomos de hidrogênios devem ser omitidos, eles serão automaticamente adicionados se o nome do resíduo e dos átomos pesamos estiverem corretos.
-    
+
+
    - O C-terminal é capeando usando o resíduo NHE (extremidade amidada, NH2) ou NME (N-metilamida, NH −CH3).
      - Para o NHE, o nome do resíduo do átomo N é substituído por NHE.
-       ![](https://github.com/alineoa/Bioinformatica-Estrutural_PPGBiotec/blob/main/04.Din%C3%A2mica%20Molecular/data/NHE.png)
+       <img width="737" height="45" alt="image" src="https://github.com/user-attachments/assets/d5b264b0-9c06-4812-aadc-60fc81cc499d" />                     
+
           
      - Para o NME, o nome do resíduo dos átomo N e CA são substituídos por NME e CH3, respectivamente.   
-       ![](https://github.com/alineoa/Bioinformatica-Estrutural_PPGBiotec/blob/main/04.Din%C3%A2mica%20Molecular/data/NME.png)   
+       <img width="734" height="56" alt="image" src="https://github.com/user-attachments/assets/0cb86392-f2b6-484f-8f31-3592a79e0a5c" />                            
+
 
       
 ***Passo 7 - Montar o sistema em solvente explícito***     
