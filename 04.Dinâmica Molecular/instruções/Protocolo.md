@@ -61,7 +61,7 @@ usar um editor de texto simples como o vi (Ubuntu), ou Bloco de Notas (Windows),
     
 ***Passo 6 - Neutralizar os terminais***      
  - As proteínas e os peptídeos têm duas extremidades conhecidas como N-terminal no início da cadeia (grupo amino) e C-terminal no final da cadeia (grupo carboxila). Se por algum motivo você clivar/fragmentar a proteína, não é interessante deixar os grupos desses terminais com cargas livres (NH3+ e COO−) pois essas cargas não desejadas podem gerar interações artificiais que não que existe no seu sistema. E para evitar isso, existe o que chamamos de capeamento que é adicionar resíduos especiais para neutralizar esses terminais.
-   - Faça uma copia do seu arquivo `cp 5GGS_noHID_pdb4amber.pdb 5GGS_capeado.pdb`
+   - Faça uma copia do seu arquivo: `cp 5GGS_noHID_pdb4amber.pdb 5GGS_capeado.pdb`
    - Abra o aquivo ***5GGS_capeado.pdb*** com um editor de texto e edite conforme as instruções abaixo.       
    - O N-terminal é capeado usando o resíduo ACE, um grupo [acetil](https://doi.org/10.1038/s12276-018-0116-z) [−C(= O) − CH3]. O início do seu arquivo deve ficar igual a figura abaixo:         
      ![](https://github.com/alineoa/Bioinformatica-Estrutural_PPGBiotec/blob/main/04.Din%C3%A2mica%20Molecular/data/grupo_acetil.png)
@@ -81,9 +81,24 @@ usar um editor de texto simples como o vi (Ubuntu), ou Bloco de Notas (Windows),
 
   **7.1.** Campo de força
    - A dinâmica molecular resolve a segunda lei de Newton para todos os átomos de um sistema, usando as forças derivadas do campo de força para prever como eles se movem ao longo do tempo. Conhecer o seu sistema é importante pois determina escolha do campo de força. Para a nossa aula, o nosso tipo de molécula é uma proteína, e é sugerido pelos desenvolvedores do AMBER usar o campo de força ff14SB , em conjunto com o modelo de água tip3p para esse sistema.
-       - Digite `tleap`   
+       - ***Comece o tleap digitando e informa o campo de força e o tipo de água:***    
+       `tleap`     
        `source leaprc.protein.ff14SB`    
        `source leaprc.water.tip3p`
+       
+       - ***carregar o complexo***     
+       `sis=loadpdb 5GGS_capeado.pdb`
+
+       - ***verificar se há choques estéricos entre átomos do sistema***     
+       `check sis`
+
+       - ***Especificar quais cisteínas formam interações de pontes dissulfeto***
+       - Renomear a CYS para CYX apenas informa ao LEaP que uma cisteína está envolvida em uma ponte dissulfeto, não quais cisteínas estão ligadas a quais. É isso que definiremos a seguir. O comando de ligação informa ao LEaP que estamos formando uma ligação entre esses dois átomos específicos.             
+       `bond sis.24.SG sis.93.SG`             
+       `bond sis.138.SG sis.212.SG`                 
+       `bond sis.262.SG sis.330.SG`                       
+
+
 
 
      
