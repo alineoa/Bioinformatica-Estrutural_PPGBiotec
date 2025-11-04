@@ -75,7 +75,7 @@ usar um editor de texto simples como o vi (Ubuntu), ou Bloco de Notas (Windows),
        ![](https://github.com/alineoa/Bioinformatica-Estrutural_PPGBiotec/blob/main/04.Din%C3%A2mica%20Molecular/data/NME.png)   
 
       
-***Passo 7 - Montar o sistema em solvente explicito***     
+***Passo 7 - Montar o sistema em solvente explícito***     
 - As proteínas e ligantes não estão isolados no seu micro-ambiente biológico, as reações biológicas, como a ligação de um ligante ao seu receptor, o enovelamento de proteínas, ocorrem na interface entre uma proteína, o [solvente circundante](10.1529/biophysj.105.058917) juntamente com ions como [Na+, K+ e  Cl-](https://doi.org/10.1021/ct9006579).
 - Dessa forma, antes de executar a simulação é necessário colocar o nosso sistema em condições similares. Para isso vamos usar o a ferramenta tleap do amber e executar os seguintes comandos:    
 
