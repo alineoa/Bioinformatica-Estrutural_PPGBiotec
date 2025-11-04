@@ -1,2 +1,2 @@
 
-![](https://upload.wikimedia.org/wikipedia/commons/b/bb/1a5r_SUMO-1_protein.gif)
+![](https://scx1.b-cdn.net/csz/news/800a/2012/twistingofpr.gif)
