@@ -61,7 +61,7 @@ usar um editor de texto simples como o vi (Ubuntu), ou Bloco de Notas (Windows),
   `reduce -Trim 5ggs_pos_pdb2qr.pdb > 5GGS_noHID.pdb`
 
 ***Passo 5 - Verificar e deixar o arquivo pronto para o tleap***      
- - pdb4amber 5GGS_noHID.pdb -o 5GGS_noHID_pdb4amber.pdb      
+  `pdb4amber 5GGS_noHID.pdb -o 5GGS_noHID_pdb4amber.pdb`      
    - Esse arquivo terá a informação dos CONECTS no final do arquivos
     
 ***Passo 6 - Neutralizar os terminais***      
