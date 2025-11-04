@@ -114,7 +114,18 @@ usar um editor de texto simples como o vi (Ubuntu), ou Bloco de Notas (Windows),
        - ***Adição de concentração salina***     
        - No passo anterior, nós apenas neutralizamos a carga do sistema, para melhor mimetizar as condições biológicas das proteínas precisamos também adicionar [150 mM de NaCl](http://dx.doi.org/10.1016/B978-0-12-411604-7.00002-7). Isso exigirá a adição de pares de íons Na+ e Cl-, com base no volume da caixa.    
      
-       - Para esse calculo vamos usar o servidor x,     
+       - Para esse calculo vamos usar o servidor [SLTCAP](https://www.phys.ksu.edu/personal/schmit/SLTCAP/SLTCAP.html),
+         - Duas informações serão necessárias para esse cálculo:
+           
+         - (i) massa do complexo proteico
+            - Para obtermos esse valor, vamos usar este [servidor](https://web.expasy.org/compute_pi/). Nele será necessário introduzir a sequencia de aminoácido do complexo inteiro. Essa informação você encontra [aqui](https://github.com/alineoa/Bioinformatica-Estrutural_PPGBiotec/blob/main/04.Din%C3%A2mica%20Molecular/inputs/sequencia-complexo.txt)
+            - O resultado esperado deve ser similar a figura abaixo:
+            ![](https://github.com/alineoa/Bioinformatica-Estrutural_PPGBiotec/blob/main/04.Din%C3%A2mica%20Molecular/data/calculo%20de%20massa.png)
+            Vamos usar o valor de Mw(peso Molar)
+
+         - (ii) número de moléculas de água
+        
+         -  
        - O comando abaixo vai adicionar a quantidade de íons de forma aleatória no sistema e tentará evitar colisões.    
        `addionsRand sis Na+ 71 Cl- 71`
 
