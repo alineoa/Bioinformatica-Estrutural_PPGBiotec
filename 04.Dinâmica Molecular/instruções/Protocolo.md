@@ -42,9 +42,12 @@ usar um editor de texto simples como o vi (Ubuntu), ou Bloco de Notas (Windows),
 - Vamos usar o [servidor](https://server.poissonboltzmann.org/pdb2pqr) do programa PDB2QR para fazer esse cálculo, usando o método PROPKA com o valor de ***pH 8***, o mesmo valor usado no experimento da obtenção dessa estrutura reportado no [artigo](https://doi.org/10.1038/ncomms13354). Carrega o arquivo ***5GGS_clean.pdb*** no servidor e selecione as opções igual a figura abaixo e clique em **start job**.
   
 <img width="1330" height="854" alt="image" src="https://github.com/user-attachments/assets/e59c0ed8-f0f1-4676-aacd-27565b1c5ae2" />                        
+
                             
-- A página a seguir, é a de resultados. Baixa o arquivo no formato PQR, geralmente é o terceiro output se contares de cima para baixo.      
-![](https://github.com/alineoa/Bioinformatica-Estrutural_PPGBiotec/blob/main/04.Din%C3%A2mica%20Molecular/data/output_pdb2qr.png)
+- A página a seguir, é a de resultados.
+- Baixa o arquivo no formato PQR, geralmente é o terceiro output se contares de cima para baixo.      
+<img width="1835" height="835" alt="image" src="https://github.com/user-attachments/assets/e09039a0-9d29-4820-ae07-ddcf880e4d6d" />    
+
 - Mova esse arquivo para o seu diretorio e renomeie para ***5ggs_pos_pdb2qr.pqr***
 - Esse servidor não fornece um arquivo PDB. Use um visualizador como [ChimeraX](https://www.cgl.ucsf.edu/chimerax/download.html) ou [PyMOL](https://www.pymol.org/) para converter para PDB.    
    - No Chimera, vai até ao menu principal, clique em ***FAVORITES** e selecione ***MODEL PANEL***,                        
