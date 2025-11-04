@@ -99,7 +99,7 @@ usar um editor de texto simples como o vi (Ubuntu), ou Bloco de Notas (Windows),
        `bond sis.262.SG sis.330.SG`                       
 
        - ***Neutralizar a carga do sistema***   
-       - Neutralizamos a carga do nosso sistema adicionando contra-íons. O comando abaixo vai verificar a carga atual do sistema. Se a carga for por exemplo 6, vamos adicionar 6 átomos de Cl- para balancear a carga    
+       - Neutralizamos a carga do nosso sistema adicionando contra-íons. O comando abaixo vai verificar a carga atual do sistema. Se a carga for por exemplo 6, vamos adicionar 6 átomos de Cl- para balancear a carga.    
        `check sis`
        `addions sis Cl- 6`     
        - verifica novamente se a carga foi zerada
@@ -137,11 +137,7 @@ usar um editor de texto simples como o vi (Ubuntu), ou Bloco de Notas (Windows),
        `addionsRand sis Na+ 54 Cl- 54`
  
        - ***Salvar os arquivos de topologia (prmtop) e de coordenadas (rst7)***        
-       `saveamberparm sis 5GGS_capeado_solvated.prmtop 5GGS_capeado_solvated.rst7`
-
-       - Neutralizamos a carga do nosso sistema adicionando contra-íons. O comando abaixo vai verificar a carga atual do sistema. Se a carga for por exemplo 6, vamos adicionar 6 átomos de Cl- para balancear a carga
-           - O Arquivo de topologia contem tipos de átomos e suas cargas parciais, listas de ligações, ângulos e torções, parâmetros do campo de força aplicados.
-           - O arquivo de coordenadas (arquivo restart) contém as coordenadas tridimensionais (x, y, z) de todos os átomos, e opcionalmente, velocidades atômicas (caso seja um restart de simulação).    
+       `saveamberparm sis 5GGS_capeado_solvated.prmtop 5GGS_capeado_solvated.rst7`                     
 
 ***Passo 8 - Relaxação do sistema***    
   - A relaxação será dividida em quatro etapas.            
