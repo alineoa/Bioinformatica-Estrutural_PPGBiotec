@@ -126,17 +126,16 @@ usar um editor de texto simples como o vi (Ubuntu), ou Bloco de Notas (Windows),
 
           **(ii)** número de moléculas de água
             Essa informação você acha na última linha de output do comando de inserir a caixa de água. Essa linha começa com a palavra *added*    
-            <img width="718" height="197" alt="image" src="https://github.com/user-attachments/assets/7b0b4739-09dc-4132-b7cc-d8bafff390c8" />
+            <img width="718" height="197" alt="image" src="https://github.com/user-attachments/assets/7b0b4739-09dc-4132-b7cc-d8bafff390c8" />                                   
 
        - Preecha esses valores no servidor dd, deve parecer igual a figura abaixo
-            <img width="427" height="387" alt="image" src="https://github.com/user-attachments/assets/ee2fb68c-59ca-45b5-b356-b6342fd021a2" />
-        - Clique em **Calculate** e anota o resultado, que deve ser similar a figura abaixo
-            <img width="294" height="121" alt="image" src="https://github.com/user-attachments/assets/3e04b717-95b4-44b8-8bc2-7156c9b71b3a" />
-
-
-       - O comando abaixo vai adicionar a quantidade de íons de forma aleatória no sistema e tentará evitar colisões.    
-       `addionsRand sis Na+ 71 Cl- 71`
-
+            <img width="427" height="387" alt="image" src="https://github.com/user-attachments/assets/ee2fb68c-59ca-45b5-b356-b6342fd021a2" />                                           
+        - Clique em **Calculate** e anota o resultado, que deve ser similar a figura abaixo                                               
+            <img width="294" height="121" alt="image" src="https://github.com/user-attachments/assets/3e04b717-95b4-44b8-8bc2-7156c9b71b3a" />                                             
+   
+       - Use o comando abaixo no tLeap para adicionar a quantidade de íons de forma aleatória no sistema.    
+       `addionsRand sis Na+ 54 Cl- 54`
+ 
        - ***Salvar os arquivos de topologia (prmtop) e de coordenadas (rst7)***        
        `saveamberparm sis 5GGS_capeado_solvated.prmtop 5GGS_capeado_solvated.rst7`
 
