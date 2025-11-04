@@ -214,6 +214,12 @@ hbond :1-352 out interface_hbonds.dat avgout agv_interface_hbonds.dat nointramol
                
 run              
 ```
+
+- Após ter o seu script pronto, você pode rodar os cálculos usando o comando abaixo:     
+`cpptraj -i analise.in`
+
+- É esperado serem gerados os seguintes arquivos de saída [agv_interface_hbonds.dat](https://github.com/alineoa/Bioinformatica-Estrutural_PPGBiotec/blob/main/04.Din%C3%A2mica%20Molecular/outputs_esperados/agv_interface_hbonds.dat), [rsmd-5ggs.dat](https://github.com/alineoa/Bioinformatica-Estrutural_PPGBiotec/blob/main/04.Din%C3%A2mica%20Molecular/outputs_esperados/rsmd-5ggs.dat), [interface_hbonds.dat](https://github.com/alineoa/Bioinformatica-Estrutural_PPGBiotec/blob/main/04.Din%C3%A2mica%20Molecular/outputs_esperados/interface_hbonds.dat)   
+    
 ### A análises dos arquivos de saída serão feitas nesse [colab](https://colab.research.google.com/drive/1ZR92F636_iWE12LKWWZ8H3XZ1TYKKAU4?usp=sharing)  
   
   
