@@ -98,10 +98,27 @@ usar um editor de texto simples como o vi (Ubuntu), ou Bloco de Notas (Windows),
        `bond sis.138.SG sis.212.SG`                 
        `bond sis.262.SG sis.330.SG`                       
 
+       - ***Neutralizar a carga do sistema***   
+       - Neutralizamos a carga do nosso sistema adicionando contra-íons. O comando abaixo vai verificar a carga atual do sistema. Se a carga for por exemplo 6, vamos adicionar 6 átomos de Cl- para balancear a carga    
+       `check sis`
+       `addions sis Cl- 6`     
+       - verifica novamente se a carga foi zerada
+       `check sis`
+         ***É esperado o resultado zero (0)***
+  
+       - ***adicionar caixa de água octaédrica***   
+       - Vamos solvatar o nosso sistema em solvente explícito. O parâmetro SolvateOct instrui o LEaP a solvatar o arquivo 5GGS_capeado.pdb em uma caixa com formato de octaedro. Esse formato imita uma esfera e é um formato de caixa muito comum. O número indica ao LEaP o tamanho da caixa. Aqui, cada parte da proteína estará a pelo menos 10,0 Å da borda da nossa caixa preenchida com água. Geralmente, são necessárias pelo menos três camadas de solvatação em todos os lados da superfície da proteína para uma simulação de dinâmica molecular, e 10,0 Å garantem isso.      
+       `solvateoct sis TIP3PBOX 10.0`    
 
 
+       `sis=loadpdb 5GGS_capeado.pdb`
 
+       - ***Adição de concentração salina ***     
+       - No passo anterior, nós apenas neutralizamos a carga do sistema, para melhor mimetizar as condições biológicas das proteínas precisamos também adicionar [150 mM de NaCl](http://dx.doi.org/10.1016/B978-0-12-411604-7.00002-7). Isso exigirá a adição de pares de íons Na+ e Cl-, com base no volume da caixa.    
      
+       - Para esse calculo vamos usar o servidor x,     
+       - O comando abaixo vai adicionar a quantidade de íons de forma aleatória no sistema e tentará evitar colisões.    
+       `addionsRand sis Na+ 71 Cl- 71`
 
 
 
